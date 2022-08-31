@@ -7,11 +7,11 @@ from io import BytesIO
 from urllib.request import urlretrieve
 
 dir_name = os.path.dirname(__file__)
-relative_dir = '../data/raw/'
+relative_dir = '/../data/raw/'
 
 for target_dir in ('domain', 'external'):
-    if not os.path.exists(relative_dir + target_dir):
-        os.makedirs(relative_dir + target_dir)
+    if not os.path.exists(dir_name + relative_dir + target_dir):
+        os.makedirs(dir_name + relative_dir + target_dir)
 
 #SA2 CSV file
 url = "https://www.abs.gov.au/AUSSTATS/subscriber.nsf/log?openagent&1270055001_sa2_2016_aust_csv.zip&1270.0.55.001&Data%20Cubes&9F6E4EB4E23B269FCA257FED0013A4F8&0&July%202016&12.07.2016&Latest"
