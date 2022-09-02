@@ -130,7 +130,8 @@ dmypy.json
 
 # data
 data/curated/
-data/raw/
+data/raw/*
+!data/raw/external/SA2_2016_AUST.csv
 
 # OSX .DS_Store file
 .DS_Store
