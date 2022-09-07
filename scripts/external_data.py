@@ -86,7 +86,9 @@ url = "https://www.education.vic.gov.au/Documents/about/research/datavic/dv331_s
 
 filename = "schools.csv"
 output_dir = f"{dir_name}{relative_dir}{filename}"
-urlretrieve(url, output_dir)
+r = requests.get(url, verify = False)
+with open(output_dir, "wb") as outfile:
+    outfile.write(r.content)
 
 ## postcodes
 url = "https://zen10.com.au/wp-content/uploads/2011/07/Victoria-Postcodes.csv"
