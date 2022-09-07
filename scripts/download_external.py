@@ -15,29 +15,23 @@ for target_dir in ('domain', 'external'):
     if not os.path.exists(f'{dir_name}{relative_dir}{target_dir}'):
         os.makedirs(f'{dir_name}{relative_dir}{target_dir}')
 
-relative_dir = '../data/raw/external/'
+relative_dir = '/../data/raw/external/'
 
 ## DOWNLOAD SA2 DATA
-
-#csv file
+# SA2 csv file
 url = "https://www.abs.gov.au/AUSSTATS/subscriber.nsf/log?openagent&1270055001_sa2_2016_aust_csv.zip&1270.0.55.001&Data%20Cubes&9F6E4EB4E23B269FCA257FED0013A4F8&0&July%202016&12.07.2016&Latest"
 
-filename = "SA2.csv"
-output_dir = f"{dir_name}{relative_dir}{filename}"
+filename = "SA2_2016_AUST.csv"
+output_dir = f"{dir_name}{relative_dir}"
 
-## Attempt 1
-# urlretrieve(url, output_dir)
+req = requests.get(url)
+with open(filename, 'wb') as output_file:
+    output_file.write(req.content)
+  
+with zipfile.ZipFile(BytesIO(req.content)) as sa2_zipfile:
+    sa2_zipfile.extractall(output_dir)
 
-## Attempt 2
-# req = requests.get(url)
-# with open(output_dir, 'w') as output_file:
-#     output_file.write(req.text)
-
-## Attempt 3
-# df = pd.read_csv(url, encoding='latin-1', sep=None)
-# df.to_csv(output_dir)
-
-# shapefile
+# SA2 shapefile
 url = "https://www.abs.gov.au/AUSSTATS/subscriber.nsf/log?openagent&1270055001_sa2_2016_aust_shape.zip&1270.0.55.001&Data%20Cubes&A09309ACB3FA50B8CA257FED0013D420&0&July%202016&12.07.2016&Latest"
 
 req = requests.get(url)
