@@ -2,21 +2,10 @@
 Summary
 """
 
-from pyspark.sql import SparkSession
 import pandas as pd
 import geopandas as gpd
 import os
 import folium
-
-# # Create a spark session (which will run spark jobs)
-# spark = (
-#     SparkSession.builder.appName("MAST30034 Project 1")
-#     .config("spark.sql.repl.eagerEval.enabled", True) 
-#     .config("spark.sql.parquet.cacheMetadata", "true")
-#     .config("spark.executor.memory", "2g")
-#     .config("spark.driver.memory", "4g")
-#     .getOrCreate()
-# )
 
 dir_name = os.path.dirname(__file__)
 relative_dir = "/../data/raw/external/"
@@ -48,13 +37,13 @@ vic_income = income.iloc[vic_index+1:qld_index]
 vic_income = vic_income[vic_income['Sum'] != 'np']
 
 # select column attributes for income data
-vic_income = vic_income[['SA2', 'SA2_name', 'Earners', 'Median age of earners', 'Sum', 'Median']]
+vic_income = vic_income[['SA2', 'SA2_name', 'Earners', 'Median age of earners', 'Sum', 'Median']].rename(columns={'Median age of earners':'Median_age'})
 
 # convert strings to integer values
 vic_income['SA2'] = vic_income['SA2'].astype(str)
 print(vic_income.head())
 
-attributes = ['Sum', 'Median', 'Median age of earners']
+attributes = ['Sum', 'Median', 'Median_age']
 
 for attribute in attributes:
     
@@ -71,9 +60,11 @@ for attribute in attributes:
         key_on='properties.SA2_MAIN16', # this is from the geoJSON's properties
         fill_color='BuPu', # color scheme
         nan_fill_color='black',
-        legend_name='Income Data'
+        legend_name=attribute
     )
 
     c.add_to(m)
     m.save(dir_name + '/../plots/'+ attribute + '_income.html')
     m
+
+vic_income.to_csv(dir_name+relative_dir + 'vic_income.csv')
