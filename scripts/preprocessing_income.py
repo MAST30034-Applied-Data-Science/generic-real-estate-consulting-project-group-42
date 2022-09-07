@@ -42,26 +42,38 @@ income.columns = income.columns.droplevel(-1)
 # select only victorian data
 vic_index = income.index[income['SA2'] == 'Victoria'].values[0]
 qld_index = income.index[income['SA2'] == 'Queensland'].values[0]
-
 vic_income = income.iloc[vic_index+1:qld_index]
+
+# remove NaN values
 vic_income = vic_income[vic_income['Sum'] != 'np']
-vic_income['Sum'] = vic_income['Sum'].astype(int)
 
-m = folium.Map(location=[-37.84, 144.96], tiles="cartodbpositron", zoom_start=2)
+# select column attributes for income data
+vic_income = vic_income[['SA2', 'SA2_name', 'Earners', 'Median age of earners', 'Sum', 'Median']]
 
-# refer to the folium documentations on more information on how to plot aggregated data.
-c = folium.Choropleth(
-    geo_data=geoJSON, # geoJSON 
-    name='choropleth', # name of plot
-    data=vic_income, # data source
-    columns=['SA2', 'Sum'], # the columns required
-    key_on='properties.SA2_MAIN16', # this is from the geoJSON's properties
-    fill_color='BuPu', # color scheme
-    nan_fill_color='black',
-    legend_name='Income Data'
-)
+# convert strings to integer values
+vic_income['SA2'] = vic_income['SA2'].astype(str)
+print(vic_income.head())
 
-c.add_to(m)
+attributes = ['Sum', 'Median', 'Median age of earners']
 
-m.save(dir_name + '../plots/income.html')
-m
+for attribute in attributes:
+    
+    vic_income[attribute] = vic_income[attribute].astype(int)
+
+    m = folium.Map(location=[-37.84, 144.96], tiles="cartodbpositron", zoom_start=7)
+
+    # refer to the folium documentations on more information on how to plot aggregated data.
+    c = folium.Choropleth(
+        geo_data=geoJSON, # geoJSON 
+        name='choropleth', # name of plot
+        data=vic_income, # data source
+        columns=['SA2', attribute], # the columns required
+        key_on='properties.SA2_MAIN16', # this is from the geoJSON's properties
+        fill_color='BuPu', # color scheme
+        nan_fill_color='black',
+        legend_name='Income Data'
+    )
+
+    c.add_to(m)
+    m.save(dir_name + '/../plots/'+ attribute + '_income.html')
+    m
