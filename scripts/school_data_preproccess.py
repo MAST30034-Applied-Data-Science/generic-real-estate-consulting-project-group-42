@@ -9,5 +9,5 @@ dir_name = os.path.dirname(__file__)
 relative_dir = "../data/raw/external/"
 
 # Read in csv file containing school dataset into Pandas dataframe
-school_df = pd.read_csv(dir_name + relative_dir + "schools.csv", sep = ";", encoding = "cp1252")
+school_df = pd.read_csv(dir_name + relative_dir + "schools.csv")
 school_df.head()
