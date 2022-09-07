@@ -13,12 +13,12 @@ for target_dir in ('domain', 'external'):
     if not os.path.exists(f'{dir_name}/{relative_dir}{target_dir}'):
         os.makedirs(f'{dir_name}/{relative_dir}{target_dir}')
 
+relative_dir = '../data/raw/external/'
+
 #SA2 CSV file
 url = "https://www.abs.gov.au/AUSSTATS/subscriber.nsf/log?openagent&1270055001_sa2_2016_aust_csv.zip&1270.0.55.001&Data%20Cubes&9F6E4EB4E23B269FCA257FED0013A4F8&0&July%202016&12.07.2016&Latest"
 
 filename = "SA2.csv"
-relative_dir = '../data/raw/external/'
-
 output_dir = f"{dir_name}/{relative_dir}{filename}"
 
 ## Attempt 1
@@ -50,7 +50,7 @@ SA_zipfile.extractall(output_dir)
 url = "https://www.abs.gov.au/statistics/labour/earnings-and-working-conditions/personal-income-australia/2014-15-2018-19/6524055002_DO002.xlsx"
 
 filename = "income_distribution.xlsx"
-output_dir = f"{dir_name}/{relative_dir}external/{filename}"
+output_dir = f"{dir_name}/{relative_dir}{filename}"
 urlretrieve(url, output_dir)
 
 ## Areas of Victoria Shapefiles
@@ -80,3 +80,10 @@ with open(filename,'wb') as output_file:
 
 SAL_zipfile = zipfile.ZipFile(BytesIO(req.content))
 SAL_zipfile.extractall(output_dir)
+
+## schools
+url = "https://www.education.vic.gov.au/Documents/about/research/datavic/dv331_schoollocations2022.csv"
+
+filename = "schools.csv"
+output_dir = f"{dir_name}/{relative_dir}{filename}"
+urlretrieve(url, output_dir)
