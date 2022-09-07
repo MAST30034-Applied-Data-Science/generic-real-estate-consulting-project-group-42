@@ -10,8 +10,8 @@ dir_name = os.path.dirname(__file__)
 relative_dir = '../data/raw/'
 
 for target_dir in ('domain', 'external'):
-    if not os.path.exists(f'{dir_name}/{relative_dir}{target_dir}'):
-        os.makedirs(f'{dir_name}/{relative_dir}{target_dir}')
+    if not os.path.exists(f'{dir_name}{relative_dir}{target_dir}'):
+        os.makedirs(f'{dir_name}{relative_dir}{target_dir}')
 
 relative_dir = '../data/raw/external/'
 
@@ -19,7 +19,7 @@ relative_dir = '../data/raw/external/'
 url = "https://www.abs.gov.au/AUSSTATS/subscriber.nsf/log?openagent&1270055001_sa2_2016_aust_csv.zip&1270.0.55.001&Data%20Cubes&9F6E4EB4E23B269FCA257FED0013A4F8&0&July%202016&12.07.2016&Latest"
 
 filename = "SA2.csv"
-output_dir = f"{dir_name}/{relative_dir}{filename}"
+output_dir = f"{dir_name}{relative_dir}{filename}"
 
 ## Attempt 1
 # urlretrieve(url, output_dir)
@@ -38,7 +38,7 @@ url = "https://www.abs.gov.au/AUSSTATS/subscriber.nsf/log?openagent&1270055001_s
 
 req = requests.get(url)
 filename = "SA2_shapefile"
-output_dir = f"{dir_name}/{relative_dir}{filename}"
+output_dir = f"{dir_name}{relative_dir}{filename}"
 
 with open(filename,'wb') as output_file:
     output_file.write(req.content)
@@ -50,7 +50,7 @@ SA_zipfile.extractall(output_dir)
 url = "https://www.abs.gov.au/statistics/labour/earnings-and-working-conditions/personal-income-australia/2014-15-2018-19/6524055002_DO002.xlsx"
 
 filename = "income_distribution.xlsx"
-output_dir = f"{dir_name}/{relative_dir}{filename}"
+output_dir = f"{dir_name}{relative_dir}{filename}"
 urlretrieve(url, output_dir)
 
 ## Areas of Victoria Shapefiles
@@ -60,7 +60,7 @@ url = "https://www.abs.gov.au/statistics/standards/australian-statistical-geogra
 
 req = requests.get(url)
 filename = "LGA_shapefile"
-output_dir = f"{dir_name}/{relative_dir}{filename}"
+output_dir = f"{dir_name}{relative_dir}{filename}"
 
 with open(filename,'wb') as output_file:
     output_file.write(req.content)
@@ -73,7 +73,7 @@ url = "https://www.abs.gov.au/statistics/standards/australian-statistical-geogra
 
 req = requests.get(url)
 filename = "SAL_shapefile"
-output_dir = f"{dir_name}/{relative_dir}{filename}"
+output_dir = f"{dir_name}{relative_dir}{filename}"
 
 with open(filename,'wb') as output_file:
     output_file.write(req.content)
@@ -85,5 +85,12 @@ SAL_zipfile.extractall(output_dir)
 url = "https://www.education.vic.gov.au/Documents/about/research/datavic/dv331_schoollocations2022.csv"
 
 filename = "schools.csv"
-output_dir = f"{dir_name}/{relative_dir}{filename}"
+output_dir = f"{dir_name}{relative_dir}{filename}"
+urlretrieve(url, output_dir)
+
+## postcodes
+url = "https://zen10.com.au/wp-content/uploads/2011/07/Victoria-Postcodes.csv"
+
+filename = "postcode.csv"
+output_dir = f"{dir_name}{relative_dir}{filename}"
 urlretrieve(url, output_dir)
