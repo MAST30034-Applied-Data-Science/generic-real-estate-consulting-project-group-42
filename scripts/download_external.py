@@ -8,14 +8,15 @@ from urllib.request import urlretrieve
 
 ## find directory
 dir_name = os.path.dirname(__file__)
-relative_dir = '../data/raw/'
+dir_name = os.path.dirname(dir_name)
+relative_dir = '/data/raw/'
 
 ## create separate folders for data
 for target_dir in ('domain', 'external'):
     if not os.path.exists(f'{dir_name}{relative_dir}{target_dir}'):
         os.makedirs(f'{dir_name}{relative_dir}{target_dir}')
 
-relative_dir = '/../data/raw/external/'
+relative_dir = '/data/raw/external/'
 
 ## DOWNLOAD SA2 DATA
 # SA2 csv file
@@ -23,10 +24,8 @@ url = "https://www.abs.gov.au/AUSSTATS/subscriber.nsf/log?openagent&1270055001_s
 
 filename = "SA2_2016_AUST.csv"
 output_dir = f"{dir_name}{relative_dir}"
-
+print("Started")
 req = requests.get(url)
-with open(filename, 'wb') as output_file:
-    output_file.write(req.content)
   
 with zipfile.ZipFile(BytesIO(req.content)) as sa2_zipfile:
     sa2_zipfile.extractall(output_dir)
@@ -37,9 +36,6 @@ url = "https://www.abs.gov.au/AUSSTATS/subscriber.nsf/log?openagent&1270055001_s
 req = requests.get(url)
 filename = "SA2_shapefile"
 output_dir = f"{dir_name}{relative_dir}{filename}"
-
-with open(filename,'wb') as output_file:
-    output_file.write(req.content)
 
 SA_zipfile = zipfile.ZipFile(BytesIO(req.content))
 SA_zipfile.extractall(output_dir)
