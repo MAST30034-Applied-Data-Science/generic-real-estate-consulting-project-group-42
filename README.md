@@ -5,10 +5,13 @@ Team Members: Winona Freihaut (1084858), Jade Devlin (1168815), Jia Williams Mur
 Tutorial: Wednesday 11am Calvin Huang
 
 Research Goal:
-To estimate the price of renting a house based on amenities and location.
+To determine the appropriate level fo rent a real estate company should be listing their properties, and which properties are most likely to increase in the next five years. Questions to answer:
+    - What are the most important internal and external features in predicting rental prices?
+    - What are the top 10 suburbs with the highest predicted growth rate?
+    - What are the most livable and affordable suburbs according to you chosen metrics?
 
 ## Instructions:
 From scripts folder:
 1. Run `download_external.py`
 2. Run `download_ptv.py`
-2. Run `preprocessing_income.py`
+3. Run `preprocessing_income.py`
