@@ -12,7 +12,7 @@ dir_name = os.path.dirname(dir_name)
 relative_dir = '/data/raw/'
 
 ## create separate folders for data
-for target_dir in ('domain', 'external'):
+for target_dir in ('external'):
     if not os.path.exists(f'{dir_name}{relative_dir}{target_dir}'):
         os.makedirs(f'{dir_name}{relative_dir}{target_dir}')
 
