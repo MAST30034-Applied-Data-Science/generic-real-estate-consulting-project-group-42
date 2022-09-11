@@ -1,10 +1,10 @@
 """
-Counts PTV stops within 1km from each property
+Records the distance of the 3 nearest PTV stops
 """
 
-import geopandas
 import json
 import os
+import pandas as pd
 
 from dotenv import load_dotenv
 from openrouteservice import client, places
@@ -17,54 +17,52 @@ output_dir = '../data/curated/'
 load_dotenv()
 tokens = []
 for i in range(1,17): 
-    token = os.environ[f'token_{i}']
+    token = os.environ.get(f'token_{i}')
     tokens.append(token)
 category_ids = [587, 588, 604, 607]
 buffer_size = 2000   # between 1-2000
-
-
-if not os.isfile(f'{dir_name}{output_dir}num_ptv.json'):
-    x = 1
-    y = 501
-else:
-    data = json.load(open( f"{dir_name}{output_dir}num_ptv.json" ))
-    x = len(data) + 1
-    y = len(data) + 501
+ptv_dict = {}
 
 
 ## read apartment data
-property_data = json.load(open( f"{dir_name}{output_dir}property_metadata.json" ))
+property_data = json.load(open( f"{dir_name}{output_dir}properties_processed.json" ))
 
-for token in tokens:
-    for index in range(x,y):
-        if index > len(property_data.keys()):
-            break
-        key = list(property_data.keys())[index]
-        coords = property_data[key]['Coordinates']
+for i in range(1,9): # 500 per day, 60 per minute
+    for token in tokens:
+        ## set x and y
+        x = ((i-1)*960)+(tokens.index(token)*60)
+        y = ((i-1)*960)+(tokens.index(token)*60)+60
+    
+        for index in range(x,y):
+            if index > len(property_data['Coordinates'].keys()):
+                break
+            coords=list(map(float,property_data['Coordinates'][str(index)][1:-1].split(',')))
 
-        ## query code
-        ors = client.Client(key=token)
-        query = {'request': 'pois',
-                'geojson': {'type':'Point','coordinates':coords},
-                'buffer': buffer_size,
-                'filter_category_ids': category_ids,
-                'sortby':'distance'}
-        features = ors.places(**query)['features']
+            ## query code
+            ors = client.Client(key=token)
+            query = {'request': 'pois',
+                    'geojson': {'type':'Point','coordinates':coords},
+                    'buffer': buffer_size,
+                    'filter_category_ids': category_ids,
+                    'sortby':'distance'}
+            features = ors.places(**query)['features']
 
-        ## distances - direct meters
-        distances = []
-        for poi in features:
-            distances.append(poi['properties']['distance'])
+            ## distances - direct meters
+            distances = []
+            for poi in features:
+                distances.append(poi['properties']['distance'])
         
-        ## add information
-        if len(distances)>3:
-            property_data[key]['PTV'] = distances[0:3]
-        else:
-            property_data[key]['PTV'] = distances
+            ## add information
+            if len(distances)>3:
+                ptv_dict[str(index)] = distances[0:3]
+            else:
+                ptv_dict[str(index)] = distances
+            
 
-    ## write new file
-    if not os.path.exists(f'{dir_name}{output_dir}num_ptv.json'):
-        json.dump(property_data, open(f"{dir_name}{output_dir}num_ptv.json", 'w'))
-    else: 
-        data.append(property_data)
-        json.dump(data, open(f"{dir_name}{output_dir}num_ptv.json", 'w'))
+## write json
+property_data['PTV'] = ptv_dict
+json.dump(property_data, open(f"{dir_name}{output_dir}num_ptv.json", 'w'))
+
+# write csv
+data = pd.read_json(f"{dir_name}{output_dir}num_ptv.json")
+data.to_csv(f"{dir_name}{output_dir}num_ptv.csv")
