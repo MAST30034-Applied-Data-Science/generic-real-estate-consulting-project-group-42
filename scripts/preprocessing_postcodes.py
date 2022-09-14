@@ -1,10 +1,12 @@
 
+import os
 import pandas as pd
 
-# read in postcode csv 
-relative_dir = "../data/raw/external/"
+dir_name = os.path.dirname(__file__)
+dir_name = os.path.dirname(dir_name)
+relative_dir_raw = '/data/raw/external/'
+relative_dir_curated = '/data/curated/'
 
-# to run, working directory needs to be set to /scripts
-postcode = pd.read_csv(relative_dir + 'postcode.csv', header=None)
+postcode = pd.read_csv(dir_name + relative_dir_raw + 'postcode.csv', header=None)
 unique_postcode = postcode.iloc[:,0].drop_duplicates()
-unique_postcode.to_csv("../data/curated/unique_postcodes.csv", index=False, header=False)
+unique_postcode.to_csv(dir_name + relative_dir_curated + 'unique_postcodes.csv', index=False, header=False)

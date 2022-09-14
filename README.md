@@ -15,3 +15,4 @@ From scripts folder:
 1. Run `download_external.py`
 2. Run `download_ptv.py`
 3. Run `preprocessing_income.py`
+4. Run `preprocessing_postcodes.py`
