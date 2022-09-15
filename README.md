@@ -13,6 +13,9 @@ To determine the appropriate level fo rent a real estate company should be listi
 ## Instructions:
 From scripts folder:
 1. Run `download_external.py`
-2. Run `download_ptv.py`
-3. Run `preprocessing_income.py`
-4. Run `preprocessing_postcodes.py`
+2. Run `preprocessing_postcodes.py`
+3. Run `scrape.ipynb` (hypothetically)
+4. Run `preprocessing_income.py`
+5. Run `preprocessing_school.py`
+6. Run `preprocessing_properties.ipynb`
+7. Run `preprocessing_ptv.py` (hypothetically)

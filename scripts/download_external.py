@@ -9,24 +9,22 @@ from urllib.request import urlretrieve
 ## find directory
 dir_name = os.path.dirname(__file__)
 dir_name = os.path.dirname(dir_name)
-relative_dir = '/data/raw/'
+relative_dir = '../data/raw/'
 
 ## create separate folders for data
 for target_dir in ['external']:
     if not os.path.exists(f'{dir_name}{relative_dir}{target_dir}'):
         os.makedirs(f'{dir_name}{relative_dir}{target_dir}')
 
-relative_dir = '/data/raw/external/'
+relative_dir = '../data/raw/external/'
 
 ## DOWNLOAD SA2 DATA
 # SA2 csv file
 url = "https://www.abs.gov.au/AUSSTATS/subscriber.nsf/log?openagent&1270055001_sa2_2016_aust_csv.zip&1270.0.55.001&Data%20Cubes&9F6E4EB4E23B269FCA257FED0013A4F8&0&July%202016&12.07.2016&Latest"
 
-filename = "SA2_2016_AUST.csv"
 output_dir = f"{dir_name}{relative_dir}"
-print("Started")
+
 req = requests.get(url)
-  
 with zipfile.ZipFile(BytesIO(req.content)) as sa2_zipfile:
     sa2_zipfile.extractall(output_dir)
 
@@ -60,3 +58,13 @@ url = "https://zen10.com.au/wp-content/uploads/2011/07/Victoria-Postcodes.csv"
 filename = "postcode.csv"
 output_dir = f"{dir_name}{relative_dir}{filename}"
 urlretrieve(url, output_dir)
+
+## POSTCODE TO SA2 MAPPING
+url = "https://www.abs.gov.au/AUSSTATS/subscriber.nsf/log?openagent&1270055006_CG_POSTCODE_2011_SA2_2011.zip&1270.0.55.006&Data%20Cubes&70A3CE8A2E6F9A6BCA257A29001979B2&0&July%202011&27.06.2012&Latest"
+
+filename = "mapping_postcode_SA2.xlsx"
+output_dir = f"{dir_name}{relative_dir}"
+
+req = requests.get(url)
+with zipfile.ZipFile(BytesIO(req.content)) as sa2_zipfile:
+    sa2_zipfile.extractall(output_dir)
