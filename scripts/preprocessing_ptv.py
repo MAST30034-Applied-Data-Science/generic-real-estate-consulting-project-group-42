@@ -11,7 +11,8 @@ from openrouteservice import client, places
 
 ## find directory
 dir_name = os.path.dirname(__file__)
-output_dir = '../data/curated/'
+dir_name = os.path.dirname(dir_name)
+output_dir = '/data/curated/'
 
 ## set variables
 load_dotenv()

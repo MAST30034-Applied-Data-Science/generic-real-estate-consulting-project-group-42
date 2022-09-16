@@ -6,7 +6,8 @@ import os
 
 # Setting up directory and defining filename
 dir_name = os.path.dirname(__file__)
-relative_dir = "../data/raw/external/"
+dir_name = os.path.dirname(dir_name)
+relative_dir = "/data/raw/external/"
 fn = dir_name + relative_dir + "schools.csv"
 
 # Read in csv file containing school dataset into Pandas dataframe
