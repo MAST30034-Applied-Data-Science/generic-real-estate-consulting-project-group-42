@@ -8,7 +8,8 @@ import os
 import folium
 
 dir_name = os.path.dirname(__file__)
-relative_dir = "../data/raw/external/"
+dir_name = os.path.dirname(dir_name)
+relative_dir = "/data/raw/external/"
 
 # read in SA2 data
 SA2 = pd.read_csv(dir_name + relative_dir + 'SA2_2016_AUST.csv')
