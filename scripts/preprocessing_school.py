@@ -41,13 +41,13 @@ schools_df.loc[schools_df["School_Name"] == "St Ignatius College Geelong", "Long
 #print(schools_df[schools_df["School_Name"] == "St Ignatius College Geelong"])
 
 # Create new directory in curated data folder
-relative_dir = "../data/curated/"
+relative_dir = "/data/curated/"
 target_dir = "schools"
 if not os.path.exists(f"{dir_name}{relative_dir}{target_dir}"):
     os.makedirs(f"{dir_name}{relative_dir}{target_dir}")
 
 # Save preprocessed dataframe under schools in curated data folder
-schools_df.to_csv(dir_name + "../data/curated/schools/school_info.csv", index = False)
+schools_df.to_csv(dir_name + relative_dir + "schools/school_info.csv", index = False)
 
 
 # Calculating the number of Government, Independent and Catholic schools of each school type in each postcode
@@ -57,4 +57,4 @@ agg_df = agg_df.drop(columns = ["School_Name", "Longitude", "Latitude"])
 #print(agg_df)
 
 # Saving aggregated dataframe under schools in curated data folder
-agg_df.to_csv(dir_name + "../data/curated/schools/school_counts.csv")
+agg_df.to_csv(dir_name + relative_dir + "schools/school_counts.csv")
