@@ -29,6 +29,11 @@ income = pd.read_excel(dir_name + relative_dir + "income_distribution.xlsx", she
 income.rename(columns={'Unnamed: 0_level_0':'SA2', 'Unnamed: 1_level_0':'SA2_name'}, inplace = True)
 income.columns = income.columns.droplevel(-1)
 
+# read in historical income data
+history = pd.read_excel(dir_name + relative_dir + "income_history.xlsx", sheet_name='Table 1.4', header=[5,6])
+history = history[['Earners (persons)', 'Median age of earners (years)', 'Sum ($)', 'Median ($)']]
+print(history['Earners (persons)']['2014-15'].head())
+
 # select only victorian data
 vic_index = income.index[income['SA2'] == 'Victoria'].values[0]
 qld_index = income.index[income['SA2'] == 'Queensland'].values[0]
@@ -42,30 +47,29 @@ vic_income = vic_income[['SA2', 'SA2_name', 'Earners', 'Median age of earners', 
 
 # convert strings to integer values
 vic_income['SA2'] = vic_income['SA2'].astype(str)
-print(vic_income.head())
 
 attributes = ['Sum', 'Median', 'Median_age']
 
-for attribute in attributes:
+# for attribute in attributes:
     
-    vic_income[attribute] = vic_income[attribute].astype(int)
+#     vic_income[attribute] = vic_income[attribute].astype(int)
 
-    m = folium.Map(location=[-37.84, 144.96], tiles="cartodbpositron", zoom_start=7)
+#     m = folium.Map(location=[-37.84, 144.96], tiles="cartodbpositron", zoom_start=7)
 
-    # refer to the folium documentations on more information on how to plot aggregated data.
-    c = folium.Choropleth(
-        geo_data=geoJSON, # geoJSON 
-        name='choropleth', # name of plot
-        data=vic_income, # data source
-        columns=['SA2', attribute], # the columns required
-        key_on='properties.SA2_MAIN16', # this is from the geoJSON's properties
-        fill_color='BuPu', # color scheme
-        nan_fill_color='black',
-        legend_name=attribute
-    )
+#     # refer to the folium documentations on more information on how to plot aggregated data.
+#     c = folium.Choropleth(
+#         geo_data=geoJSON, # geoJSON 
+#         name='choropleth', # name of plot
+#         data=vic_income, # data source
+#         columns=['SA2', attribute], # the columns required
+#         key_on='properties.SA2_MAIN16', # this is from the geoJSON's properties
+#         fill_color='BuPu', # color scheme
+#         nan_fill_color='black',
+#         legend_name=attribute
+#     )
 
-    c.add_to(m)
-    m.save(dir_name + '../plots/'+ attribute + '_income.html')
-    m
+#     c.add_to(m)
+#     m.save(dir_name + '/plots/'+ attribute + '_income.html')
+#     m
 
-vic_income.to_csv(dir_name+relative_dir + 'vic_income.csv')
+# vic_income.to_csv(dir_name+relative_dir + 'vic_income.csv')
