@@ -16,10 +16,6 @@ if not os.path.exists(dir_name + relative_dir + 'external'):
     os.makedirs(dir_name + relative_dir + 'external')
     print('Created external directory')
 
-if not os.path.exists(dir_name + relative_dir + 'external/' + 'population'):
-    os.makedirs(dir_name + relative_dir + 'external/' + 'population')
-    print('Created population directory')
-
 relative_dir = '/data/raw/external/'
 
 ## DOWNLOAD SA2 DATA
@@ -91,23 +87,18 @@ with zipfile.ZipFile(BytesIO(req.content)) as sa2_zipfile:
 print('Completed downloading and extracting postcodes to SA2 mapping data')
 
 ## POPULATIONS
-pop_base_url = 'https://www.abs.gov.au/census/find-census-data/datapacks/download/'
-pop_filenames = ['2021_GCP_POA_for_VIC_short-header', '2016_GCP_POA_for_VIC_short-header', '2011_BCP_POA_for_VIC_short-header']
-pop_csv_dirs = ['/2021 Census GCP Postal Areas for VIC/2021Census_G01_VIC_POA.csv', 
-                '/2016 Census GCP Postal Areas for VIC/2016Census_G01_VIC_POA.csv',
-                '/2011 Census BCP Postal Areas for VIC/VIC/2011Census_B01_VIC_POA_short.csv']
-pop_years = ['2021', '2016', '2011']
+pop_url = 'https://www.abs.gov.au/census/find-census-data/datapacks/download/2021_TSP_SA2_for_VIC_short-header.zip'
+output_dir = dir_name + relative_dir
+folder_name = 'SA2_VIC_Census_TSP'
+pop_filenames = ['2021Census_T01_VIC_SA2.csv', '2021Census_T02_VIC_SA2.csv']
+files_dir = 'SA2_VIC_Census_TSP/2021 Census TSP Statistical Area 2 for VIC/'
 
-for filename, csv_dir, pop_year in zip(pop_filenames, pop_csv_dirs, pop_years):
-    output_dir = dir_name + relative_dir + 'population/'
+urlretrieve(pop_url, f'{output_dir}{folder_name}.zip')
+with zipfile.ZipFile(f'{output_dir}{folder_name}.zip', "r") as zip_ref:
+    zip_ref.extractall(f'{output_dir}{folder_name}')
 
-    urlretrieve(f'{pop_base_url}{filename}.zip', f'{output_dir}{filename}.zip')
+for filename in pop_filenames:
+    os.rename(f'{output_dir}{files_dir}{filename}', f'{output_dir}{filename}')
 
-    # extract zip file
-    with zipfile.ZipFile(f'{output_dir}{filename}.zip', "r") as zip_ref:
-        zip_ref.extractall(f'{output_dir}{filename}')
-
-    os.rename(f'{output_dir}{filename}{csv_dir}', dir_name + relative_dir + f'{pop_year}_census.csv')
-
-    print(f"Completed downloading and extracting {pop_year}_census.csv")
+print(f"Completed downloading and extracting census data")
 
