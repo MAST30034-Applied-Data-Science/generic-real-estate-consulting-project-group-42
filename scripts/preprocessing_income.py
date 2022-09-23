@@ -31,9 +31,14 @@ income.columns = income.columns.droplevel(-1)
 
 # read in historical income data
 history = pd.read_excel(dir_name + relative_dir + "income_history.xlsx", sheet_name='Table 1.4', header=[5,6])
-history = history[['Earners (persons)', 'Median age of earners (years)', 'Sum ($)', 'Median ($)']]
-print(history['Earners (persons)']['2014-15'].head())
 
+# fix column headers by renaming them and merging into a single level
+history = history[['Unnamed: 0_level_0', 'Unnamed: 1_level_0', 'Earners (persons)', 'Median age of earners (years)', 'Sum ($)', 'Median ($)']]
+history.rename(columns={'Earners (persons)':'n_earners', 'Median age of earners (years)':'median_age', 'Sum ($)':'total_income', 'Median ($)':'median_income'},level=0, inplace=True)
+history.columns = history.columns.values
+history.rename(columns={('Unnamed: 0_level_0', 'SA2'):'SA2', ('Unnamed: 1_level_0', 'SA2 NAME'):'SA2_name'}, inplace=True)
+
+## INCOME DATA
 # select only victorian data
 vic_index = income.index[income['SA2'] == 'Victoria'].values[0]
 qld_index = income.index[income['SA2'] == 'Queensland'].values[0]
@@ -48,7 +53,20 @@ vic_income = vic_income[['SA2', 'SA2_name', 'Earners', 'Median age of earners', 
 # convert strings to integer values
 vic_income['SA2'] = vic_income['SA2'].astype(str)
 
-attributes = ['Sum', 'Median', 'Median_age']
+## HISTORICAL DATA
+# select only victorian data
+vic_index = history.index[history['SA2'] == 'Victoria'].values[0]
+qld_index = history.index[history['SA2'] == 'Queensland'].values[0]
+vic_history = history.iloc[vic_index+1:qld_index]
+
+# remove NaN values
+vic_history = vic_history[vic_history[('n_earners', '2014-15')] != 'np']
+
+# save history
+vic_history.to_csv(dir_name + relative_dir + 'vic_income_history.csv')
+
+# # visualisations
+# attributes = ['Sum', 'Median', 'Median_age']
 
 # for attribute in attributes:
     
@@ -72,4 +90,4 @@ attributes = ['Sum', 'Median', 'Median_age']
 #     m.save(dir_name + '/plots/'+ attribute + '_income.html')
 #     m
 
-# vic_income.to_csv(dir_name+relative_dir + 'vic_income.csv')
+vic_income.to_csv(dir_name+relative_dir + 'vic_income.csv')
