@@ -16,5 +16,6 @@ census_finance_filtered = census_finance.drop(['Med_age_persns_C2011', 'Med_age_
                                                 'Avg_num_p_per_brm_C2011', 'Avg_num_p_per_brm_C2016', 'Avg_num_p_per_brm_C2021'],
                                                 axis=1)
 census_df = census_pop_filtered.merge(census_finance_filtered, on='SA2_CODE_2021')
+census_df = census_df.rename(columns={'SA2_CODE_2021': 'sa2_2021'})
 
 census_df.to_csv(dir_name + relative_dir_curated + 'census_data.csv', index=False)
