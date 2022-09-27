@@ -16,6 +16,6 @@ From scripts folder:
 2. Run `preprocessing_postcodes.py`
 3. Run `scrape.ipynb` (hypothetically)
 4. Run `preprocessing_income.py`
-5. Run `preprocessing_school.py`
-6. Run `preprocessing_properties.ipynb`
-7. Run `preprocessing_ptv.py` (hypothetically)
+5. Run `preprocessing_properties.ipynb`
+6. Run `preprocessing_school.py` (hypothetically)
+7. Run `preprocessing_amenities.py` (hypothetically)
