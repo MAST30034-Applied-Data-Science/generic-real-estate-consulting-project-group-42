@@ -10496,7 +10496,7 @@
 10494,22 Elizabeth St Port Fairy VIC 3284,440.0,"[-38.386368, 142.2215847]",3,1,2,House,Stockdale & Leggo Port Fairy,3284,17,"{'distance': 994.0, 'duration': 113.4}","{'distance': 26256.5, 'duration': 1520.1}"
 10495,4978 Princes Highway Codrington VIC 3285,500.0,"[-38.2790585, 142.0034341]",4,1,1,House,Ray White Warrnambool,3285,5,"{'distance': 25037.0, 'duration': 1078.5}","{'distance': 0.0, 'duration': 0.0}"
 10496,2/60 Austin Street Hawkesdale VIC 3287,260.0,"[-38.1068106, 142.3206837]",1,1,1,Apartment / Unit / Flat,Roberts One Real Estate,3287,12,"{'distance': 147.9, 'duration': 22.4}","{'distance': 147.9, 'duration': 22.4}"
-10497,457 Eckersleys Road Gerrigerrup VIC 3289,300.0,"[-38.0014125, 142.1450759]",3,2,2,House,Southern Grampians Livestock & Real Estate,3289,2,0,0
+10497,457 Eckersleys Road Gerrigerrup VIC 3289,300.0,"[-38.0014125, 142.1450759]",3,2,2,House,Southern Grampians Livestock & Real Estate,3289,2,"{'distance': 30400.0, 'duration': 1670.0}","{'distance': 0.0, 'duration': 0.0}"
 10498,91 Watton Street Penshurst VIC 3289,230.0,"[-37.8768345, 142.2909085]",2,1,1,House,Elders Real Estate Hamilton,3289,14,"{'distance': 261.0, 'duration': 29.4}","{'distance': 27965.0, 'duration': 1198.1}"
 10499,4/64 Fenton Street Hamilton VIC 3300,350.0,"[-37.73859119999999, 142.0338212]",2,1,1,Apartment / Unit / Flat,Property Listings,3300,17,"{'distance': 1724.8, 'duration': 191.5}","{'distance': 1448.9, 'duration': 198.0}"
 10500,39 Fyfe Street Hamilton VIC 3300,310.0,"[-37.7496651, 142.0377011]",3,1,1,House,Professionals Real Estate Hamilton,3300,15,"{'distance': 805.5, 'duration': 104.0}","{'distance': 2338.1, 'duration': 232.8}"
@@ -10560,7 +10560,7 @@
 10558,3 Ravine Place Thornhill Park VIC 3335,430.0,"[-37.7217674, 144.6350959]",4,2,2,House,Raine & Horne Point Cook - Williams Landing,3335,230,"{'distance': 10262.6, 'duration': 614.8}","{'distance': 10262.6, 'duration': 614.8}"
 10559,2 Westcott Parade Rockbank VIC 3335,490.0,"[-37.7356979, 144.6699426]",4,2,2,House,Barry Plant Melton,3335,308,"{'distance': 911.9, 'duration': 148.9}","{'distance': 9732.4, 'duration': 623.7}"
 10560,9 Ravine Place Thornhill Park VIC 3335,400.0,"[-37.7216239, 144.6346338]",4,2,2,House,YPA Estate Agents Melton,3335,230,"{'distance': 10404.5, 'duration': 618.6}","{'distance': 10404.5, 'duration': 618.6}"
-10561,8 Akthar Avenue Rockbank VIC 3335,380.0,"[-37.7342402, 144.6465813]",3,2,2,House,White Knight Estate Agents,3335,208,0,0
+10561,8 Akthar Avenue Rockbank VIC 3335,380.0,"[-37.7342402, 144.6465813]",3,2,2,House,White Knight Estate Agents,3335,208,"{'distance': 1300.0, 'duration': 204.0}","{'distance': 11300.0, 'duration': 623.0}"
 10562,50 Mewat Circuit Thornhill Park VIC 3335,395.0,"[-37.7460478, 144.6176783]",5,2,2,House,Longview Real Estate,3335,220,"{'distance': 6076.0, 'duration': 593.6}","{'distance': 9231.8, 'duration': 526.1}"
 10563,57 Maya Avenue Thornhill Park VIC 3335,380.0,"[-37.7108973, 144.6292913]",4,2,2,House,YPA Estate Agents Caroline Springs,3335,232,"{'distance': 6558.4, 'duration': 545.6}","{'distance': 8412.7, 'duration': 541.9}"
 10564,4 Ivana street Rockbank VIC 3335,450.0,"[-37.7363967, 144.6578255]",4,2,2,House,Bal Real Estate,3335,258,"{'distance': 4820.5, 'duration': 422.2}","{'distance': 13479.5, 'duration': 873.7}"
@@ -10580,7 +10580,7 @@
 10578,46 Viola Drive Rockbank VIC 3335,360.0,"[-37.7341559, 144.6668051]",3,2,1,House,Reliance Caroline Springs Pty Ltd,3335,307,"{'distance': 586.8, 'duration': 95.6}","{'distance': 10062.9, 'duration': 678.3}"
 10579,16 Croxden Avenue Thornhill Park VIC 3335,400.0,"[-37.7167186, 144.6337675]",4,2,2,House,SKAD REAL ESTATE THOMASTOWN,3335,246,"{'distance': 9687.3, 'duration': 528.9}","{'distance': 9687.3, 'duration': 528.9}"
 10580,88 Bromley Circuit Thornhill Park VIC 3335,420.0,"[-37.7056657, 144.6225165]",4,2,2,House,Reliance Sunbury,3335,237,"{'distance': 5213.0, 'duration': 444.1}","{'distance': 8210.6, 'duration': 512.8}"
-10581,9 Akram Way Rockbank VIC 3335,360.0,"[-37.7334636, 144.6489065]",3,1,1,House,Reliance Caroline Springs Pty Ltd,3335,208,0,0
+10581,9 Akram Way Rockbank VIC 3335,360.0,"[-37.7334636, 144.6489065]",3,1,1,House,Reliance Caroline Springs Pty Ltd,3335,208,"{'distance': 1300.0, 'duration': 204.0}","{'distance': 8800.0, 'duration': 698.0}"
 10582,28 Fold Circuit Bonnie Brook VIC 3335,590.0,"[-37.69185909999999, 144.6597268]",5,3,2,House,Avenue West Real Estate,3335,204,"{'distance': 4366.6, 'duration': 393.6}","{'distance': 11144.5, 'duration': 616.1}"
 10583,8 RESTFUL WAY Rockbank VIC 3335,440.0,"[-37.7386036, 144.654411]",4,2,2,House,Westside Real Estate,3335,258,"{'distance': 4548.1, 'duration': 382.9}","{'distance': 13751.8, 'duration': 747.1}"
 10584,42 Restful Way Rockbank VIC 3335,450.0,"[-37.7384415, 144.6526807]",4,2,2,House,YOUR REALTORS,3335,259,"{'distance': 4564.0, 'duration': 385.2}","{'distance': 13767.7, 'duration': 749.4}"
@@ -10589,8 +10589,8 @@
 10587,10 Mewat Circuit Thornhill Park VIC 3335,400.0,"[-37.7460478, 144.6176783]",4,2,2,House,LJ Hooker Geelong City,3335,220,"{'distance': 6076.0, 'duration': 593.6}","{'distance': 9231.8, 'duration': 526.1}"
 10588,34 Fulham Crescent Thornhill Park VIC 3335,420.0,"[-37.7049518, 144.6235245]",4,2,2,House,LJ Hooker Geelong City,3335,241,"{'distance': 5257.9, 'duration': 450.6}","{'distance': 8255.5, 'duration': 519.3}"
 10589,14 Popular Street Rockbank VIC 3335,440.0,"[-37.7365703, 144.6597788]",4,2,2,House,Equity Wise Real Estate,3335,259,"{'distance': 2226.3, 'duration': 261.5}","{'distance': 10885.3, 'duration': 713.0}"
-10590,38 Nash Boulevard Rockbank VIC 3335,410.0,"[-37.734347, 144.6499434]",4,2,2,House,Prime Residential Property Management,3335,218,0,0
-10591,8 McGrath Way Rockbank VIC 3335,400.0,"[-37.734204, 144.647104]",3,2,2,House,Barry Plant Caroline Springs,3335,208,0,0
+10590,38 Nash Boulevard Rockbank VIC 3335,410.0,"[-37.734347, 144.6499434]",4,2,2,House,Prime Residential Property Management,3335,218,"{'distance': 1300.0, 'duration': 204.0}","{'distance': 8800.0, 'duration': 698.0}"
+10591,8 McGrath Way Rockbank VIC 3335,400.0,"[-37.734204, 144.647104]",3,2,2,House,Barry Plant Caroline Springs,3335,208,"{'distance': 1300.0, 'duration': 204.0}","{'distance': 8800.0, 'duration': 698.0}"
 10592,48 Murray Road Thornhill Park VIC 3335,400.0,"[-37.7163717, 144.6324391]",4,2,2,House,Reventon Residential,3335,243,"{'distance': 9737.0, 'duration': 539.1}","{'distance': 9737.0, 'duration': 539.1}"
 10593,6 Ness Street Thornhill Park VIC 3335,435.0,"[-37.7105566, 144.6302427]",4,2,2,House,N7 Real Estate Caroline Springs,3335,249,"{'distance': 8657.9, 'duration': 581.3}","{'distance': 8542.1, 'duration': 560.6}"
 10594,23 Houston Drive Thornhill Park VIC 3335,400.0,"[-37.7199524, 144.6331433]",4,2,2,House,Makaidlan Real Estate,3335,226,"{'distance': 9937.2, 'duration': 563.7}","{'distance': 9937.2, 'duration': 563.7}"
@@ -11128,7 +11128,7 @@
 11126,1/9 Young Street Horsham VIC 3400,300.0,"[-36.7270003, 142.2084587]",3,1,1,Apartment / Unit / Flat,Horsham Real Estate,3400,11,"{'distance': 1874.6, 'duration': 191.1}","{'distance': 1666.9, 'duration': 201.8}"
 11127,547 Horsham Noradjuha Road Horsham VIC 3400,600.0,"[-36.7813095, 142.0921544]",4,2,2,House,Ray White Horsham,3400,7,"{'distance': 12195.6, 'duration': 703.0}","{'distance': 13342.2, 'duration': 892.2}"
 11128,2/26 Philip Street Horsham VIC 3400,295.0,"[-36.7174633, 142.182239]",2,1,2,Apartment / Unit / Flat,Horsham Real Estate,3400,13,"{'distance': 339.2, 'duration': 49.0}","{'distance': 979.9, 'duration': 235.2}"
-11129,131 Barrs Road Horsham VIC 3400,320.0,"[-36.7882751, 142.0336453]",3,1,1,House,Ray White Horsham,3400,6,0,0
+11129,131 Barrs Road Horsham VIC 3400,320.0,"[-36.7882751, 142.0336453]",3,1,1,House,Ray White Horsham,3400,6,"{'distance': 16200.0, 'duration': 1448.0}","{'distance': 21100.0, 'duration': 1511.0}"
 11130,7 Knight Place Horsham VIC 3400,340.0,"[-36.6991409, 142.2065174]",3,1,2,House,Horsham Real Estate,3400,13,"{'distance': 2544.8, 'duration': 315.6}","{'distance': 2544.8, 'duration': 315.6}"
 11131,4 Barton Drive Horsham VIC 3400,450.0,"[-36.7257126, 142.2109361]",3,2,2,House,Harcourts Horsham,3400,11,"{'distance': 1954.9, 'duration': 192.4}","{'distance': 1747.3, 'duration': 203.1}"
 11132,2/5 Pynsent Street Horsham VIC 3400,300.0,"[-36.7158184, 142.2043571]",2,1,1,Apartment / Unit / Flat,Harcourts Horsham,3400,13,"{'distance': 264.2, 'duration': 29.5}","{'distance': 595.6, 'duration': 77.0}"
@@ -11727,7 +11727,7 @@
 11725,110 Arundel Street Benalla VIC 3672,500.0,"[-36.5578108, 145.9822236]",3,2,1,House,Ray White Benalla,3672,9,"{'distance': 992.2, 'duration': 89.9}","{'distance': 855.6, 'duration': 71.8}"
 11726,111 Burston Road Benalla VIC 3672,500.0,"[-36.4994057, 145.9800966]",4,1,1,House,Ray White Benalla,3672,6,"{'distance': 8765.4, 'duration': 599.2}","{'distance': 8765.4, 'duration': 599.2}"
 11727,23 Russell Street Benalla VIC 3672,350.0,"[-36.545014, 145.9667919]",3,1,1,House,Living Here Benalla,3672,9,"{'distance': 2024.5, 'duration': 190.5}","{'distance': 1650.9, 'duration': 187.5}"
-11728,12 Livingston Blvd Benalla VIC 3672,500.0,"[-36.6181709, 145.9804173]",3,2,2,House,Living Here Benalla,3672,3,0,0
+11728,12 Livingston Blvd Benalla VIC 3672,500.0,"[-36.6181709, 145.9804173]",3,2,2,House,Living Here Benalla,3672,3,"{'distance': 9600.0, 'duration': 755.0}","{'distance': 9400.0, 'duration': 736.0}"
 11729,38 Cecil Street Benalla VIC 3672,580.0,"[-36.5592175, 145.9763913]",3,1,2,House,Ray White Benalla,3672,9,"{'distance': 1056.0, 'duration': 111.8}","{'distance': 919.4, 'duration': 93.7}"
 11730,15 Carlyle Street Benalla VIC 3672,500.0,"[-36.5631449, 145.9781322]",3,2,2,House,Living Here Benalla,3672,8,"{'distance': 1721.4, 'duration': 192.3}","{'distance': 1584.8, 'duration': 174.2}"
 11731,4 Mathieson Court Benalla VIC 3672,350.0,"[-36.5486257, 145.9699935]",2,1,1,House,Living Here Benalla,3672,9,"{'distance': 1241.0, 'duration': 178.9}","{'distance': 1018.4, 'duration': 153.9}"
@@ -12056,7 +12056,7 @@
 12054,41A Sydney Street Kilmore VIC 3764,450.0,"[-37.2927666, 144.9510295]",4,2,1,House,Barry Plant Mitchell Shire,3764,30,"{'distance': 782.0, 'duration': 65.3}","{'distance': 1038.4, 'duration': 103.1}"
 12055,58 White Street Kilmore VIC 3764,410.0,"[-37.3033922, 144.9526873]",3,1,1,House,Wayne Smith Real Estate,3764,31,"{'distance': 266.2, 'duration': 31.9}","{'distance': 266.2, 'duration': 31.9}"
 12056,44 Fitzroy Street Kilmore VIC 3764,370.0,"[-37.2928352, 144.956161]",3,1,0,House,Wilson Partners Real Estate,3764,28,"{'distance': 1229.9, 'duration': 142.2}","{'distance': 1486.3, 'duration': 180.0}"
-12057,2/45 White Street Kilmore VIC 3764,375.0,"[-37.300947, 144.9524899]",2,1,2,Apartment / Unit / Flat,Wilson Partners Real Estate,3764,31,0,0
+12057,2/45 White Street Kilmore VIC 3764,375.0,"[-37.300947, 144.9524899]",2,1,2,Apartment / Unit / Flat,Wilson Partners Real Estate,3764,31,"{'distance': 10.0, 'duration': 30.0}","{'distance': 10.0, 'duration': 30.0}"
 12058,"18 Church street, Kilmore VIC 3764",400.0,"[-37.2941471, 144.9491261]",4,2,2,House,Wayne Smith Real Estate,3764,30,"{'distance': 329.3, 'duration': 33.6}","{'distance': 1094.6, 'duration': 117.6}"
 12059,15A CLUB PARADE Kilmore VIC 3764,400.0,"[-37.30207559999999, 144.9600985]",3,2,2,Apartment / Unit / Flat,Wilson Partners Real Estate,3764,24,"{'distance': 968.9, 'duration': 202.4}","{'distance': 968.9, 'duration': 202.4}"
 12060,13 BRANIGAN DRIVE Kilmore VIC 3764,370.0,"[-37.2609299, 144.9723555]",3,1,1,House,Wilson Partners Real Estate,3764,12,"{'distance': 6052.7, 'duration': 426.0}","{'distance': 6309.1, 'duration': 463.7}"
@@ -12796,7 +12796,7 @@
 12794,2 Davit Court Safety Beach VIC 3936,650.0,"[-38.3036406, 145.0066453]",3,2,1,House,Barry Plant Berwick ( Sales ),3936,83,"{'distance': 5696.9, 'duration': 454.4}","{'distance': 5696.9, 'duration': 454.4}"
 12795,28 Fig Street Dromana VIC 3936,420.0,"[-38.33589449999999, 144.97777]",2,1,3,House,MJ Ross & Co,3936,86,"{'distance': 2255.3, 'duration': 273.1}","{'distance': 5723.9, 'duration': 443.7}"
 12796,14 Patterson Street Safety Beach VIC 3936,620.0,"[-38.3125918, 144.9980825]",3,2,1,House,MJ Ross & Co,3936,64,"{'distance': 7939.2, 'duration': 644.3}","{'distance': 7939.2, 'duration': 644.3}"
-12797,B30 BERTH MARTHA COVE MARINA Safety Beach VIC 3936,160.0,"[-38.3352183, 144.9942305]",1,1,0,House,RT Edgar Portsea,3936,83,0,0
+12797,B30 BERTH MARTHA COVE MARINA Safety Beach VIC 3936,160.0,"[-38.3352183, 144.9942305]",1,1,0,House,RT Edgar Portsea,3936,83,"{'distance': 3800.0, 'duration': 268.0}","{'distance': 3100.0, 'duration': 194.0}"
 12798,1/30 Solander Street Dromana VIC 3936,650.0,"[-38.3352547, 144.9707671]",3,2,2,House,Warlimont & Nutt Pty Ltd,3936,85,"{'distance': 1290.4, 'duration': 179.2}","{'distance': 6131.5, 'duration': 477.9}"
 12799,207 Purves Road Arthurs Seat VIC 3936,1000.0,"[-38.3718261, 144.9574408]",4,2,4,Rural,RT Edgar Flinders,3936,47,"{'distance': 6703.5, 'duration': 421.1}","{'distance': 11061.9, 'duration': 723.1}"
 12800,4/25 Hodgkinson Street Dromana VIC 3936,740.0,"[-38.3367835, 144.9576989]",3,2,2,House,MJ Ross & Co,3936,64,"{'distance': 12036.5, 'duration': 706.1}","{'distance': 6961.2, 'duration': 554.0}"

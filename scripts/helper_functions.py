@@ -41,20 +41,20 @@ def convert_census_to_postcode(census_df, sa2_postcode_map, agg_function='mean_n
 
 def get_closest(property, schools):
     '''find the schools with the closest distance'''
-    prop_coords = tuple(property)
+    prop_coords = (property[1],property[0])
     if len(schools) == 0: ## for if no nearby schools
         return 0
     
     distances = []
     for school in schools:
-        distances.append(geopy.distance.geodesic(prop_coords, tuple(school)))
+        distances.append(geopy.distance.geodesic(prop_coords, (school[1],school[0])))
     
     return schools[distances.index(min(distances))]
 
 def get_route(start, end, token):
     '''find the route'''
-    if end == 0: ## for if no nearby schools
-        return {'distance': '0', 'duration':'0'}
+    if end == 0:
+        return {'distance': 0.0, 'duration': 0.0}
     
     coords = [tuple(start), tuple(end)]
     ors = client.Client(key=token)
