@@ -40,7 +40,7 @@ LONG = 144.5582
 schools_df.loc[schools_df["School_Name"] == "St Ignatius College Geelong", "Latitude"] = LAT
 schools_df.loc[schools_df["School_Name"] == "St Ignatius College Geelong", "Longitude"] = LONG
 
-## Fix latitude for Youth2Industry College South
+## Manually fixing latitude for Youth2Industry College South
 LAT = -37.83731
 schools_df.loc[schools_df["School_Name"] == "Youth2Industry College", "Latitude"] = LAT
 
@@ -76,42 +76,35 @@ filtered_schools = school_data[(school_data['School_Type'] == 'Primary')|\
     (school_data['School_Type'] =='Pri/Sec')|(school_data['School_Type'] == 'Secondary')]
 
 ## for each school find the properties in 30 min driving distance
-for token in tokens:
-    for index, row in filtered_schools.iterrows():
+school_isos = {}
+for i in range(0,5):
+    token = tokens[i]
+    schools = filtered_schools.iloc[i:i+500] # take 500 at a time for API limit
+    for index, row in schools.iterrows():
         school_coords = [row['Longitude'], row['Latitude']]
         school_key = f"{row['School_Type']}, {school_coords}"
 
-        ## marker since num schools > isochrone quota
-        if school_key not in nearby_properties.keys():
-            ors = client.Client(key=token)
+        ors = client.Client(key=token)
 
-            ## find search region
-            params_iso = {'locations': [school_coords],
-                        'profile': 'driving-car',
-                        'range':[1800] # 30 mins
-                        }
-            iso = ors.isochrones(**params_iso)['features'][0]['geometry']
+        ## find search region
+        params_iso = {'locations': [school_coords],
+                    'profile': 'driving-car',
+                    'range':[1800] # 30 mins
+                    }
 
-            ## find all properties that fall in the search region
-            for property in property_data['Coordinates'].keys():
-                backwards = list(map(float,property_data['Coordinates'][property][1:-1].split(',')))
-                coords = Point(backwards[1], backwards[0])
-                if coords.within(Polygon(iso['coordinates'][0])):
-                    if school_key in nearby_properties.keys():
-                        nearby_properties[school_key].append(property)
-                    else:
-                        nearby_properties[school_key] = [property]
-            time.sleep(0.5)
+        iso = ors.isochrones(**params_iso)['features'][0]['geometry']
+        school_isos[school_key] = Polygon(iso['coordinates'][0])
+        time.sleep(0.5)
 
-## reverse dictionary to find the schools within a 30 min drive of each property
+## for each property, list all schools that it is within 30min from
 nearby_schools = {}
 for property in property_data['Coordinates'].keys():
-    for school in nearby_properties.keys():
-        if property in nearby_properties[school]:
-            if property in nearby_schools.keys():
-                nearby_schools[property].append(school)
-            else:
-                nearby_schools[property] = [school]
+    nearby_schools[property] = []
+    backwards = list(map(float,property_data['Coordinates'][property][1:-1].split(',')))
+    coords = Point(backwards[1], backwards[0])
+    for school in school_isos.keys():
+        if coords.within(school_isos[school]):
+            nearby_schools[property].append(school)
 
 ## find nearest schools
 school_dist = {}

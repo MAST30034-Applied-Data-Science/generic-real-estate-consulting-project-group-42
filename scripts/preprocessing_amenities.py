@@ -54,5 +54,16 @@ data = pd.read_json(f"{dir_name}{output_dir}neary_amenities.json")
 data.to_csv(f"{dir_name}{output_dir}nearby_amenities.csv")
 
 ## manual input for routes that cannot be found
-## issues from driveways longer that 350m and old roadworks in Rockbank
-## 10497, 10498, 10561, 10581, 10590, 10591, 11129, 11728, 11729, 12047, 12797
+## cbd distance
+10497 # cbd {'distance': 295100.0, 'duration': 13050.05}
+10561 # cbd {'distance': 36300.0, 'duration': 2070.0}, park {'distance': 1200.0, 'duration': 240.0}, train {'distance': 1300.0, 'duration': 180.0}
+10581 # cbd {'distance': 36200.0, 'duration': 2016.0}, park {'distance': 1000.0, 'duration': 240.0}, train {'distance': 1100.0, 'duration': 120.0}
+10590 # cbd {'distance': 36250.0, 'duration': 2010.0}, park {'distance': 800.0, 'duration': 180.0}, train {'distance': 900.0, 'duration': 120.0}
+10591 # cbd {'distance': 36300.0, 'duration': 2070.0}, park {'distance': 1200.0, 'duration': 240.0}, train {'distance': 1300.0, 'duration': 180.0}
+11129 # cbd {'distance': 320900.0, 'duration': 14124.0}
+11728 # cbd {'distance': 226000.0, 'duration': 9336.0}
+11729 # cbd {'distance': 201400.0, 'duration': 8430}
+12047 # park {'distance': 3200.0, 'duration': 360.0}
+12715 # park {'distance': 1300.0, 'duration': 180.0}
+12717 # park {'distance': 1300.0, 'duration': 180.0}
+12797 # cbd {'distance': 82700.0, 'duration': 66.3}, park {'distance': 1600.0, 'duration': 180.0}
