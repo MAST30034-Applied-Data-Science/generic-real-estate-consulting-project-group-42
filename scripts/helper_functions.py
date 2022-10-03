@@ -1,5 +1,9 @@
+import geopy.distance
 import numpy as np
 import pandas as pd
+import time
+
+from openrouteservice import client, directions, places
 
 def convert_census_to_postcode(census_df, sa2_postcode_map, agg_function='mean_no_zero'):
     ''' Inputs census data as indexed by SA2 and converts it to postcode through aggregation
@@ -34,3 +38,58 @@ def convert_census_to_postcode(census_df, sa2_postcode_map, agg_function='mean_n
     ).reset_index()
 
     return census_df_postcode_agg
+
+def get_closest(property, schools):
+    '''find the schools with the closest distance'''
+    prop_coords = (property[1],property[0])
+    if len(schools) == 0: ## for if no nearby schools
+        return 0
+    
+    distances = []
+    for school in schools:
+        distances.append(geopy.distance.geodesic(prop_coords, (school[1],school[0])))
+    
+    return schools[distances.index(min(distances))]
+
+def get_route(start, end, token):
+    '''find the route'''
+    if end == 0:
+        return {'distance': 0.0, 'duration': 0.0}
+    
+    coords = [tuple(start), tuple(end)]
+    ors = client.Client(key=token)
+    request = {'coordinates': coords,
+            'profile': 'driving-car',
+            'geometry': 'true',
+            'format_out':'geojson'}
+    route = ors.directions(**request)
+    time.sleep(0.5)
+    return route['features'][0]['properties']['summary']
+
+def find_poi(property_data, index, token, buffer_size, category, amenities_dict):
+    '''
+    Pings ORS to find points of interest
+    '''
+    backwards = list(map(float,property_data['Coordinates'][str(index)][1:-1].split(',')))
+    coords = [backwards[1], backwards[0]]
+    ors = client.Client(key=token)
+
+    ## find poi
+    query = {'request': 'pois',
+            'geojson': {'type':'Point','coordinates':coords},
+            'buffer': buffer_size,
+            'filter_category_ids': category,
+            'sortby':'distance',
+            'limit': 2}
+
+    features = ors.places(**query)['features']
+    destination = features[0]['geometry']['coordinates']
+
+    ## find route
+    info = get_route(coords, destination, token)
+
+    ## add information
+    amenities_dict[category][str(index)] = info
+    time.sleep(0.5)
+
+    return amenities_dict

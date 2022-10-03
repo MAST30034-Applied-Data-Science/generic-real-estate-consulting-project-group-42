@@ -16,6 +16,16 @@ From scripts folder:
 2. Run `preprocessing_postcodes.py`
 3. Run `scrape.ipynb` (hypothetically)
 4. Run `preprocessing_income.py`
-5. Run `preprocessing_school.py`
-6. Run `preprocessing_properties.ipynb`
-7. Run `preprocessing_ptv.py` (hypothetically)
+5. Run `preprocessing_properties.ipynb`
+6. Run `preprocessing_school.py` (hypothetically)
+7. Run `preprocessing_amenities.py` (hypothetically)
+
+## order (informal)
+1. download_external.py - all external data downloaded
+2. preprocessing_postcodes.py - clean postcodes for scraping property data
+3. scrape.ipynb - download property data (will need to be a script later?)
+4. preprocessing_properties.ipynb - cleaning property data returning prepropcessed_properties.json/.csv
+5. preprocessing (cleaning) external datasets - income, schools
+6. ors related scripts - preprocessing amenities, cbd_distance
+7. merge ors datasets
+8. modelling/forecasting
