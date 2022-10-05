@@ -199,8 +199,8 @@ property_data['Primary_Distance'] = school_dist['Primary']
 property_data['Secondary_Distance'] = school_dist['Secondary']
 
 ## write json
-json.dump(property_data, open(f"{dir_name}{relative_dir}school_info.json", 'w'))
+json.dump(property_data, open(f"{dir_name}{relative_dir}school_distances.json", 'w'))
 
 # write csv
-data = pd.read_json(f"{dir_name}{relative_dir}school_info.json")
-data.to_csv(f"{dir_name}{relative_dir}school_info.csv")
+data = pd.read_json(f"{dir_name}{relative_dir}school_distances.json")
+data.to_csv(f"{dir_name}{relative_dir}school_distances.csv")
