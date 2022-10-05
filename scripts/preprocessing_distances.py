@@ -109,5 +109,5 @@ property_data['CBD_Distance'] = cbd_dict
 json.dump(property_data, open(f"{dir_name}{output_dir}nearby_amenities.json", 'w'))
 
 # write csv
-data = pd.read_json(f"{dir_name}{output_dir}neary_amenities.json")
+data = pd.read_json(f"{dir_name}{output_dir}nearby_amenities.json")
 data.to_csv(f"{dir_name}{output_dir}nearby_amenities.csv")
