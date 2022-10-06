@@ -15,10 +15,16 @@ From scripts folder:
 1. Run `download_external.py`
 2. Run `preprocessing_postcodes.py`
 3. Run `scrape.ipynb` (hypothetically)
-4. Run `preprocessing_income.py`
-5. Run `preprocessing_properties.ipynb`
-6. Run `preprocessing_school.py` (hypothetically)
-7. Run `preprocessing_amenities.py` (hypothetically)
+4. Run `preprocessing_properties.py`
+5. Run `preprocessing_census.py`
+6. Run `preprocessing_income.py`
+7. Run `preprocessing_sa2_postcode_mapping.py`
+8. Run `preprocessing_school.py`
+9. Run `preprocessing_distances.py` (hypothetically)
+10. Run `preprocessing_school_distances.py` (hypothetically)
+11. Run `merge_datasets.py`
+
+
 
 ## order (informal)
 1. download_external.py - all external data downloaded
