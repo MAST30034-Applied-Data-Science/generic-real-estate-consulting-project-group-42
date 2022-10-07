@@ -37,6 +37,7 @@ properties = properties[properties['Cost'] != 0]
 properties = properties[properties['Cost'] <= 20000]
 
 ## Save data
+relative_dir = '/data/curated/'
 new = properties.reset_index(drop=True)
-new.to_csv('../data/curated/properties_processed.csv')
-new.to_json('../data/curated/properties_processed.json')
+new.to_csv(f'{dir_name}{relative_dir}properties_processed.csv')
+new.to_json(f'{dir_name}{relative_dir}properties_processed.json')
