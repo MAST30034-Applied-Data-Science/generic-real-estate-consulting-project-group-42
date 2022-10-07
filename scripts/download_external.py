@@ -9,14 +9,14 @@ from urllib.request import urlretrieve
 ## find directory
 dir_name = os.path.dirname(__file__)
 dir_name = os.path.dirname(dir_name)
-relative_dir = '../data/raw/'
+relative_dir = '/data/raw/'
 
 ## create separate folders for data
 if not os.path.exists(dir_name + relative_dir + 'external'):
     os.makedirs(dir_name + relative_dir + 'external')
     print('Created external directory')
 
-relative_dir = '../data/raw/external/'
+relative_dir = '/data/raw/external/'
 
 ## DOWNLOAD SA2 DATA
 # SA2 csv file

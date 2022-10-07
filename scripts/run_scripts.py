@@ -4,7 +4,7 @@ subprocess.run("python3 download_external.py", shell=True)
 
 subprocess.run("python3 preprocessing_postcodes.py", shell=True)
 
-# scrape property data
+# subprocess.run("python3 download_property_data.py", shell=True)
 
 subprocess.run("python3 preprocessing_properties.py", shell=True)
 
@@ -21,3 +21,5 @@ subprocess.run("python3 preprocessing_school.py", shell=True)
 # subprocess.run("python3 preprocessing_school_distances.py", shell=True)
 
 subprocess.run("python3 merge_datasets.py", shell=True)
+
+subprocess.run("python3 featurise_distances.py", shell=True)

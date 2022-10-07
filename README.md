@@ -21,16 +21,11 @@ To determine the appropriate level fo rent a real estate company should be listi
 
 
 ## Instructions:
-From scripts folder:
-1. `download_external.py`
-2. `preprocessing_postcodes.py`
-3. `scrape.ipynb` (hypothetically)
-4. `preprocessing_properties.py`, `preprocessing_census.py`, `preprocessing_income.py`, `preprocessing_sa2_postcode_mapping.py`, `preprocessing_school.py`
-5. `preprocessing_distances.py`, `preprocessing_school_distances.py` (hypothetically)
-6. `merge_datasets.py`
-7. `categorise_dist.ipynb`
-8. `forecasting.ipynb`
-9. `affordability.ipynb`, `analysis_properties.ipynb`, `geopandas_visualsations.ipynb`, `liveability.ipynb`, `visualise_ors.ipynb`
+
+1. requirements.txt
+2. to download and preprocess data run `run_scripts.py` which runs all scripts (excluding those requiring webscraping or api keys)
+3. to get a forecast of prices run `forecasting.ipynb`
+4. for visualisation and analysis run `affordability.ipynb`, `analysis_properties.ipynb`, `geopandas_visualsations.ipynb`, `liveability.ipynb`, `visualise_ors.ipynb`
 
 ## Issues:
 
