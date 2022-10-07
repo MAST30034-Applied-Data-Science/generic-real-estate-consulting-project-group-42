@@ -13,7 +13,7 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 ## find directory
 dir_name = os.path.dirname(__file__)
 dir_name = os.path.dirname(dir_name)
-relative_dir = '../data/curated/'
+relative_dir = '/data/curated/'
 
 ## read in data
 amenities = pd.read_csv(f'{dir_name}{relative_dir}nearby_amenities.csv')
@@ -49,4 +49,4 @@ merged = merged.replace(
 
 ## save file
 merged = merged.reset_index(drop=True)
-merged.to_csv('../data/curated/all_distances.csv')
+merged.to_csv(f'{dir_name}{relative_dir}all_distances.csv')
