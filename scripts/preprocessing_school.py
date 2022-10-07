@@ -20,13 +20,6 @@ schools_df = schools_df[COLUMNS]
 # Renaming column headers 
 schools_df = schools_df.rename(columns = {"Address_Postcode": "Postcode", "Y": "Latitude", "X": "Longitude"})
 
-# Filtering and finding instances of NaN values
-for col in schools_df.columns:
-    if not schools_df[schools_df[col].isna()].empty:
-        print(f"{col} contains NaN values")
-print(schools_df[schools_df["Latitude"].isna()])
-print(schools_df[schools_df["Longitude"].isna()])
-
 # Manually adding the coordinates for St Ignatius College Geelong 
 LAT = -38.1893
 LONG = 144.5582
