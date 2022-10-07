@@ -9,14 +9,14 @@ from urllib.request import urlretrieve
 ## find directory
 dir_name = os.path.dirname(__file__)
 dir_name = os.path.dirname(dir_name)
-relative_dir = '/data/raw/'
+relative_dir = '../data/raw/'
 
 ## create separate folders for data
 if not os.path.exists(dir_name + relative_dir + 'external'):
     os.makedirs(dir_name + relative_dir + 'external')
     print('Created external directory')
 
-relative_dir = '/data/raw/external/'
+relative_dir = '../data/raw/external/'
 
 ## DOWNLOAD SA2 DATA
 # SA2 csv file
@@ -138,3 +138,11 @@ for filename in pop_filenames:
 
 print(f"Completed downloading and extracting census data")
 
+## POST CODE AREAS
+url = 'https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/access-and-downloads/digital-boundary-files/POA_2021_AUST_GDA2020_SHP.zip'
+
+req = requests.get(url)
+with zipfile.ZipFile(BytesIO(req.content)) as sa2_zipfile:
+    sa2_zipfile.extractall(output_dir)
+
+print("Completed downloading and extracting postal area data")
