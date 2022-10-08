@@ -119,3 +119,9 @@ def preprocess_mapping(input_dir, column1, column2, column1_renamed, column2_ren
     df = df.rename(columns={column1: column1_renamed, column2: column2_renamed})
 
     return df
+
+def separate_dictionary(data, column):
+    return pd.concat(
+        [data.drop(column, axis=1), 
+        data[column].map(eval).apply(pd.Series)]
+    , axis=1)
