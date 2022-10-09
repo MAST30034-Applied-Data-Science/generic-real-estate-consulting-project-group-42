@@ -8,6 +8,10 @@ from scipy.spatial import distance
 import json 
 import os
 
+# filter out warnings
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
+
 # user input for postcode 
 postcode_input = input ("Enter a postcode: ")
 postcode = int(postcode_input)
@@ -31,6 +35,8 @@ except:
     print(f"{postcode} is not available")
     quit()
 
+initial_pc_data = database.loc[(database['Postcode'] == int(postcode))]
+initial_pc_data = initial_pc_data.drop(columns='Unnamed: 0')
 
 output = pd.DataFrame(columns=['Unnamed: 0', 'Postcode', 'Growth Rate', 'Standardised Affordability', 'Standardised Liveability'])
 for i in range(0, len(top_ten)):
@@ -39,6 +45,14 @@ for i in range(0, len(top_ten)):
     if data.empty:
         print(f"No data for {top_ten_postcodes[i]}")
     else:
-        #output = output.append(pd.Series(poo, index = output.columns[:len(poo)]), ignore_index = True)
-        print(data)
-# function to search up closest postcodes and details 
+        output = output.append(data, ignore_index = True)
+
+output = output.drop(columns='Unnamed: 0')
+output[f'Distance from {postcode}'] = top_ten.values()
+
+print("\n")
+print("Here is the data for your current postcode: ")
+print(initial_pc_data)
+print("\n")
+print("Here are is the data for the surrounding postcodes: ")
+print(output)
