@@ -1,6 +1,8 @@
 """
 Cleaning the schools dataset and finding closest schools for each property
 """
+
+# Import necessary libraries
 import os
 import pandas as pd
 
@@ -8,7 +10,7 @@ import pandas as pd
 dir_name = os.path.dirname(__file__)
 dir_name = os.path.dirname(dir_name)
 relative_dir = "/data/raw/external/"
-fn = dir_name + relative_dir + "schools.csv"
+fn = f"{dir_name}{relative_dir}schools.csv"
 
 # Read in csv file containing school dataset into Pandas dataframe
 schools_df = pd.read_csv(fn, encoding = "ISO-8859-1")
@@ -26,7 +28,7 @@ LONG = 144.5582
 schools_df.loc[schools_df["School_Name"] == "St Ignatius College Geelong", "Latitude"] = LAT
 schools_df.loc[schools_df["School_Name"] == "St Ignatius College Geelong", "Longitude"] = LONG
 
-## Manually fixing latitude for Youth2Industry College South
+# Manually fixing latitude for Youth2Industry College South
 LAT = -37.83731
 schools_df.loc[schools_df["School_Name"] == "Youth2Industry College", "Latitude"] = LAT
 
@@ -37,7 +39,7 @@ if not os.path.exists(f"{dir_name}{relative_dir}{target_dir}"):
     os.makedirs(f"{dir_name}{relative_dir}{target_dir}")
 
 # Save preprocessed dataframe under schools in curated data folder
-schools_df.to_csv(dir_name + relative_dir + "schools/school_info.csv", index = False)
+schools_df.to_csv(f"{dir_name}{relative_dir}schools/school_info.csv", index = False)
 
 # Calculating the number of Government, Independent and Catholic schools of each school type in each postcode
 agg_df = schools_df.groupby(by = ["Postcode", "Education_Sector", "School_Type"], as_index = False).count()
@@ -45,4 +47,6 @@ agg_df["Number_of_Schools"] = agg_df["School_Name"]
 agg_df = agg_df.drop(columns = ["School_Name", "Longitude", "Latitude"])
 
 # Saving aggregated dataframe under schools in curated data folder
-agg_df.to_csv(dir_name + relative_dir + "schools/school_counts.csv")
+agg_df.to_csv(f"{dir_name}{relative_dir}schools/school_counts.csv")
+
+print("Completed preprocessing school data")
