@@ -67,7 +67,7 @@ urlretrieve(url, output_dir)
 
 url = "https://www.matthewproctor.com/Content/postcodes/australian_postcodes.zip"
 filename = "australian_postcodes"
-outout_dir = f"{dir_name}{relative_dir}{filename}"
+output_dir = f"{dir_name}{relative_dir}{filename}"
 req = requests.get(url)
 with zipfile.ZipFile(BytesIO(req.content)) as aus_postcode_zip:
     aus_postcode_zip.extractall(output_dir)
@@ -140,7 +140,7 @@ filename = "POA_2021_AUST_GDA2020"
 output_dir = f"{dir_name}{relative_dir}{filename}"
 req = requests.get(url)
 with zipfile.ZipFile(BytesIO(req.content)) as poa_zipfile:
-    poa_zipfile.extractall(f"{output_dir}POA_2021_AUST_GDA2020")
+    poa_zipfile.extractall(f"{output_dir}")
 
 print("Completed downloading and extracting postal area data")
 

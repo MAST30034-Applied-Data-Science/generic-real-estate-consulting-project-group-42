@@ -32,8 +32,10 @@ postcode_2016_to_2021 = preprocess_mapping(f"{dir_name}{relative_dir_raw}postcod
                                             "POA_CODE_2016", "POA_CODE_2021", "postcode_2016", "postcode_2021") 
 
 # Merge dataframes to create 2021 mapping
-sa2_postcode_mapping_2021 = sa2_2016_to_2021.merge(sa2_2011_to_2016, on="sa2_2016").merge(sa2_postcode_mapping_2011, on="sa2_2011")\
-                                            .merge(postcode_2011_to_2016, on="postcode_2011").merge(postcode_2016_to_2021, on="postcode_2016")
+sa2_postcode_mapping_2021 = sa2_2016_to_2021.merge(sa2_2011_to_2016, on="sa2_2016")\
+                                            .merge(sa2_postcode_mapping_2011, on="sa2_2011")\
+                                            .merge(postcode_2011_to_2016, on="postcode_2011")\
+                                            .merge(postcode_2016_to_2021, on="postcode_2016")
 sa2_postcode_mapping_2021 = sa2_postcode_mapping_2021[["sa2_2021", "postcode_2021"]].drop_duplicates()
 
 # Save information

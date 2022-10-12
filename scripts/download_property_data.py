@@ -22,13 +22,11 @@ relative_dir = "/data/"
 
 # Define constants
 BASE_URL = "https://www.domain.com.au"
-N_PAGES = range(1, 11) # update this to your liking
+N_PAGES = range(1, 11) 
 headers = {"User-Agent": "Mozilla/5.0 (X11; CrOS x86_64 12871.102.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.141 Safari/537.36"}
 
-# Read in relevant data
 postcodes = pd.read_csv(f"{dir_name}{relative_dir}curated/unique_postcodes.csv", header=None).squeeze()
 
-# Declare dictionaries
 url_dict = defaultdict(dict)
 property_metadata = defaultdict(dict)
 
@@ -43,20 +41,19 @@ for index, postcode in enumerate(postcodes):
     
     # Generate list of urls to visit
     for page in N_PAGES:
-        # Need to decide regions to analyse         
-        url = BASE_URL + f"/rent/?postcode={postcode}&page={page}" # a single page
-        bs_object = BeautifulSoup(requests.get(url, headers=headers).text, "html.parser") # makes bs object
+        url = BASE_URL + f"/rent/?postcode={postcode}&page={page}" 
+        bs_object = BeautifulSoup(requests.get(url, headers=headers).text, "html.parser") 
         time.sleep(random.randint(0, 3))
 
         # Find the unordered list (ul) elements which are the results, then
-        # Find all href (a) tags that are from the base_url website.
         index_links = bs_object.find("ul", {"data-testid": "results"}) 
 
         # If there are no links, break
         if (index_links == None):
             break 
 
-        index_links = index_links.findAll("a",href=re.compile(f"{BASE_URL}/*")) # complies RE string into RE expression
+        # Find all href (a) tags that are from the base_url website.
+        index_links = index_links.findAll("a",href=re.compile(f"{BASE_URL}/*"))
             
         for link in index_links:
             # If its a property address, add it to the list
@@ -70,7 +67,8 @@ for index, postcode in enumerate(postcodes):
     stop = timeit.default_timer()
     progress_tracker(start, stop, curr_progress)
 
-start = timeit.default_timer() # for progress tracking
+# for progress tracking
+start = timeit.default_timer() 
 property_metadata = defaultdict(dict)
 
 
@@ -92,16 +90,13 @@ for index, postcode in enumerate(url_dict):
         else: 
             property_metadata[property_url]["Name"] = name.text
 
-
         # Regex to find the cost in the summary title 
         cost_finder = re.compile(r'[0-9]+.?[0-9]+') # this regex search assumes that the first numeric value is the cost per week 
-        # Looks for the div containing a summary title for cost
         cost_text = bs_object \
             .find("div", {"data-testid": "listing-details__summary-title"}) \
             .text
 
         # Extracts the cost from the summary title and adds to dictionary. 
-        # If there is no cost written in the summary title, it is replaced by 0 
         cost = cost_finder.search(cost_text)
         if cost == None: 
             property_metadata[property_url]["Cost"] = 0
@@ -112,7 +107,7 @@ for index, postcode in enumerate(url_dict):
         # Finds latitude and longitude from integrated Google Map
         property_metadata[property_url]["Coordinates"] = [
             float(coord) for coord in re.findall(
-                r'destination=([-\s,\d\.]+)', # use regex101.com here if you need to
+                r'destination=([-\s,\d\.]+)', 
                 bs_object \
                     .find(
                         "a",
@@ -140,7 +135,6 @@ for index, postcode in enumerate(url_dict):
         else:
             property_metadata[property_url]["Agency"] = agency.text
 
-        # Add postcode
         property_metadata[property_url]["Postcode"] = postcode
 
     # for progress tracking
