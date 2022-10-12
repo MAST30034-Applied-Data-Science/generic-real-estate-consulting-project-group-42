@@ -10,8 +10,6 @@ subprocess.run("python3 preprocessing_properties.py", shell=True)
 
 subprocess.run("python3 preprocessing_census.py", shell=True)
 
-subprocess.run("python3 preprocessing_income.py", shell=True)
-
 subprocess.run("python3  preprocessing_sa2_postcode_mapping.py", shell=True)
 
 subprocess.run("python3 preprocessing_school.py", shell=True)

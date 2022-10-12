@@ -38,19 +38,6 @@ SA_zipfile.extractall(output_dir)
 
 print("Completed downloading and extracting SA2 shapefile")
 
-# INCOME DATA
-urls = [
-    "https://www.abs.gov.au/statistics/labour/earnings-and-working-conditions/personal-income-australia/2014-15-2018-19/6524055002_DO002.xlsx", 
-    "https://www.abs.gov.au/statistics/labour/earnings-and-working-conditions/personal-income-australia/2014-15-2018-19/6524055002_DO001.xlsx"]
-filenames = ["income_distribution.xlsx", "income_history.xlsx"]
-for i in range(0, len(urls)):
-    url = urls[i]
-    filename = filenames[i]
-    output_dir = f"{dir_name}{relative_dir}{filename}"
-    urlretrieve(url, output_dir)
-
-print("Completed downloading income data")
-
 ## SCHOOLS
 url = "https://www.education.vic.gov.au/Documents/about/research/datavic/dv331_schoollocations2022.csv"
 filename = "schools.csv"
