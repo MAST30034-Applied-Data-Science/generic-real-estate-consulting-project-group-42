@@ -11,7 +11,7 @@ Tutorial: Wednesday 11am Calvin Huang
 
 Research Goal:
 
-To determine the appropriate level fo rent a real estate company should be listing their properties, and which properties are most likely to increase in the next five years. Questions to answer:
+To determine the appropriate level for rent a real estate company should be listing their properties, and which properties are most likely to increase in the next five years. Questions to answer:
 
     - What are the most important internal and external features in predicting rental prices?
 
@@ -23,9 +23,9 @@ To determine the appropriate level fo rent a real estate company should be listi
 ## Instructions:
 
 1. check you have relevent modules with `requirements.txt`
-2. to download and preprocess data run `run_scripts.py` which runs all scripts (excluding those requiring webscraping or api keys)
-3. for feature analysis `analysis_properties.ipynb`
-4. to get a forecast of prices run `forecasting.ipynb`
+2. to download and preprocess data, navigate to the scripts directory in terminal and run `run_scripts.py` which runs all scripts (excluding those requiring webscraping or api keys)
+3. for feature analysis, run `analysis_properties.ipynb`
+4. to get a forecast of prices, run `forecasting.ipynb`
 5. for visualisation and analysis run `affordability.ipynb`, `geopandas_visualsations.ipynb`, `liveability.ipynb`, `visualise_ors.ipynb` (note `visualise_ors.ipynb` requires an api key for certain blocks of code)
-6. for tool dataset, run `tool.ipynb`
+6. to get the tool dataset, run `tool.ipynb`
 7. to use the tool, run `tooluse.py`
