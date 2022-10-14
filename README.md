@@ -28,5 +28,5 @@ To determine the appropriate level for rent a real estate company should be list
 4. to get a forecast of prices, run `forecasting.ipynb` (Question 2)
 5. for the most liveable and affordable suburbs, run `affordability.ipynb` and `liveability.ipynb` (Question 3)
 6. for visualisation, run `geopandas_visualsations.ipynb` and `visualise_ors.ipynb` (note `visualise_ors.ipynb` requires an api key for certain blocks of code)
-7. to get the tool dataset, run `tool.ipynb` (note this first requires running of steps 4 and 5 for the necessary datasets)
+7. to get the tool dataset, run `toolsetup.py` (note this first requires running of steps 4 and 5 for the necessary datasets)
 8. to use the tool, run `tooluse.py`
