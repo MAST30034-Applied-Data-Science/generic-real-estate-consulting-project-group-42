@@ -24,8 +24,9 @@ To determine the appropriate level for rent a real estate company should be list
 
 1. check you have relevent modules with `requirements.txt`
 2. to download and preprocess data, navigate to the scripts directory in terminal and run `run_scripts.py` which runs all scripts (excluding those requiring webscraping or api keys)
-3. for feature analysis, run `analysis_properties.ipynb`
-4. to get a forecast of prices, run `forecasting.ipynb`
-5. for visualisation and analysis run `affordability.ipynb`, `geopandas_visualsations.ipynb`, `liveability.ipynb`, `visualise_ors.ipynb` (note `visualise_ors.ipynb` requires an api key for certain blocks of code)
-6. to get the tool dataset, run `tool.ipynb`
-7. to use the tool, run `tooluse.py`
+3. for feature analysis, run `analysis_properties.ipynb` (Question 1)
+4. to get a forecast of prices, run `forecasting.ipynb` (Question 2)
+5. for the most liveable and affordable suburbs, run `affordability.ipynb` and `liveability.ipynb` (Question 3)
+6. for visualisation, run `geopandas_visualsations.ipynb` and `visualise_ors.ipynb` (note `visualise_ors.ipynb` requires an api key for certain blocks of code)
+7. to get the tool dataset, run `tool.ipynb` (note this first requires running of steps 4 and 5 for the necessary datasets)
+8. to use the tool, run `tooluse.py`
