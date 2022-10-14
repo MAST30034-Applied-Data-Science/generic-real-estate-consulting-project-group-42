@@ -1,5 +1,5 @@
 """
-Selects relevant columns of the census data
+Selects relevant columns of the census data and consolidates all census datasets into one
 """
 
 # Importing necessary libraries

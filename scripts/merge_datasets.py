@@ -1,5 +1,5 @@
 """
-Merging distance datasets
+Merging distance datasets with property data
 """
 
 # Importing necessary libraries

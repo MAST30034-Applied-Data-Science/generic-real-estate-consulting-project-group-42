@@ -18,10 +18,10 @@ def convert_census_to_postcode(census_df, sa2_postcode_map, agg_function="mean_n
     if agg_function == "mean_no_zero":
         agg_func = lambda lst: round(np.mean([x for x in lst if x > 0]), 2)
 
-
     census_df_postcode = sa2_postcode_map.merge(census_df, on="sa2_2021").drop("sa2_2021", axis=1)
     census_df_postcode = census_df_postcode[census_df_postcode["postcode_2021"] >= 3000]
 
+    # Group and aggreagte 
     census_df_postcode_agg = census_df_postcode.groupby("postcode_2021").agg(
         tot_population_11 = pd.NamedAgg(column="Tot_persons_C11_P", aggfunc=sum),
         tot_population_16 = pd.NamedAgg(column="Tot_persons_C16_P", aggfunc=sum),
