@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7ead6c5eb704192b39e8ff9578afea9c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_7ead6c5eb704192b39e8ff9578afea9c" ></div>
+        
+</body>
+<script>    
+    
+            var map_7ead6c5eb704192b39e8ff9578afea9c = L.map(
+                "map_7ead6c5eb704192b39e8ff9578afea9c",
+                {
+                    center: [-37.431682, 143.3790728],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 14,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a3063db5d0fd7cf757ed0b8278b061f9 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_7ead6c5eb704192b39e8ff9578afea9c);
+        
+    
+            var marker_d7cad8009b8fcf0b75bcb0794ee6a491 = L.marker(
+                [-37.431682, 143.3790728],
+                {}
+            ).addTo(map_7ead6c5eb704192b39e8ff9578afea9c);
+        
+    
+            var icon_b7fee008cc04fe7cc98fde1d08c47f79 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "#faf2ff", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_d7cad8009b8fcf0b75bcb0794ee6a491.setIcon(icon_b7fee008cc04fe7cc98fde1d08c47f79);
+        
+    
+        var popup_0003601202c040493dc844d87ac5580e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a137ef571a6ee7ecf29c5b174e24ac90 = $(`<div id="html_a137ef571a6ee7ecf29c5b174e24ac90" style="width: 100.0%; height: 100.0%;">7 Sturt Street Beaufort VIC 3373</div>`)[0];
+            popup_0003601202c040493dc844d87ac5580e.setContent(html_a137ef571a6ee7ecf29c5b174e24ac90);
+        
+
+        marker_d7cad8009b8fcf0b75bcb0794ee6a491.bindPopup(popup_0003601202c040493dc844d87ac5580e)
+        ;
+
+        
+    
+    
+            var circle_f3f62089bc4847abcb16e7734e540d51 = L.circle(
+                [-37.431682, 143.3790728],
+                {"bubblingMouseEvents": true, "color": "#6897bb", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6897bb", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2000, "stroke": true, "weight": 3}
+            ).addTo(map_7ead6c5eb704192b39e8ff9578afea9c);
+        
+    
+            var marker_ad371a97e7a117f4ee32a774c2587b4b = L.marker(
+                [-37.429419, 143.381324],
+                {}
+            ).addTo(map_7ead6c5eb704192b39e8ff9578afea9c);
+        
+    
+            var icon_54d7dcb2c6ae8858c232ca862933405a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tree", "iconColor": "#b5231a", "markerColor": "lightgray", "prefix": "fa"}
+            );
+            marker_ad371a97e7a117f4ee32a774c2587b4b.setIcon(icon_54d7dcb2c6ae8858c232ca862933405a);
+        
+    
+        var popup_9514c4a5e552f7bbecb452409ca1dce4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fbe253b1709147309bd48d666e203819 = $(`<div id="html_fbe253b1709147309bd48d666e203819" style="width: 100.0%; height: 100.0%;"><strong>Beaufort Memorial Rose Garden</strong><br>Lat: -37.429<br>Long: 143.381</div>`)[0];
+            popup_9514c4a5e552f7bbecb452409ca1dce4.setContent(html_fbe253b1709147309bd48d666e203819);
+        
+
+        marker_ad371a97e7a117f4ee32a774c2587b4b.bindPopup(popup_9514c4a5e552f7bbecb452409ca1dce4)
+        ;
+
+        
+    
+    
+            var marker_f2690263c586baf93b5ab2a21f3c4f44 = L.marker(
+                [-37.429097, 143.384045],
+                {}
+            ).addTo(map_7ead6c5eb704192b39e8ff9578afea9c);
+        
+    
+            var icon_3dd08afa145e2ef119a4a03adafab975 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "envelope", "iconColor": "#b5231a", "markerColor": "lightgray", "prefix": "fa"}
+            );
+            marker_f2690263c586baf93b5ab2a21f3c4f44.setIcon(icon_3dd08afa145e2ef119a4a03adafab975);
+        
+    
+        var popup_34979891240c2cef409e2c027d0973b7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a1f97b77290efc34b089d8cfdd95af67 = $(`<div id="html_a1f97b77290efc34b089d8cfdd95af67" style="width: 100.0%; height: 100.0%;"><strong>Australia Post Beaufort</strong><br>Lat: -37.429<br>Long: 143.384</div>`)[0];
+            popup_34979891240c2cef409e2c027d0973b7.setContent(html_a1f97b77290efc34b089d8cfdd95af67);
+        
+
+        marker_f2690263c586baf93b5ab2a21f3c4f44.bindPopup(popup_34979891240c2cef409e2c027d0973b7)
+        ;
+
+        
+    
+    
+            var marker_e1320bdeedc027cfde7c2390e4bdc271 = L.marker(
+                [-37.427392, 143.382237],
+                {}
+            ).addTo(map_7ead6c5eb704192b39e8ff9578afea9c);
+        
+    
+            var icon_90b1426a2ceb4c41cdafa2b934a63614 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "train", "iconColor": "#b5231a", "markerColor": "lightgray", "prefix": "fa"}
+            );
+            marker_e1320bdeedc027cfde7c2390e4bdc271.setIcon(icon_90b1426a2ceb4c41cdafa2b934a63614);
+        
+    
+        var popup_d136bf9e1e3697995dd626bf146520ab = L.popup({"maxWidth": "100%"});
+
+        
+            var html_39d8f507e9c9ba57ed951754002dd2a8 = $(`<div id="html_39d8f507e9c9ba57ed951754002dd2a8" style="width: 100.0%; height: 100.0%;"><strong>Beaufort Station</strong><br>Lat: -37.427<br>Long: 143.382</div>`)[0];
+            popup_d136bf9e1e3697995dd626bf146520ab.setContent(html_39d8f507e9c9ba57ed951754002dd2a8);
+        
+
+        marker_e1320bdeedc027cfde7c2390e4bdc271.bindPopup(popup_d136bf9e1e3697995dd626bf146520ab)
+        ;
+
+        
+    
+    
+        function geo_json_b228d4e23bf3e7fe542aaddc8439ae55_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#4a00b5", "opacity": 1, "weight": 3};
+            }
+        }
+
+        function geo_json_b228d4e23bf3e7fe542aaddc8439ae55_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_b228d4e23bf3e7fe542aaddc8439ae55 = L.geoJson(null, {
+                onEachFeature: geo_json_b228d4e23bf3e7fe542aaddc8439ae55_onEachFeature,
+            
+                style: geo_json_b228d4e23bf3e7fe542aaddc8439ae55_styler,
+        });
+
+        function geo_json_b228d4e23bf3e7fe542aaddc8439ae55_add (data) {
+            geo_json_b228d4e23bf3e7fe542aaddc8439ae55
+                .addData(data)
+                .addTo(map_7ead6c5eb704192b39e8ff9578afea9c);
+        }
+            geo_json_b228d4e23bf3e7fe542aaddc8439ae55_add({"bbox": [143.37911, -37.431635, 143.384146, -37.426867], "features": [{"bbox": [143.37911, -37.431635, 143.384146, -37.426867], "geometry": {"coordinates": [[143.37911, -37.431461], [143.380751, -37.431635], [143.38088, -37.431005], [143.380921, -37.430813], [143.380981, -37.430439], [143.381, -37.430331], [143.381119, -37.429694], [143.381125, -37.429643], [143.381006, -37.429631], [143.38101, -37.429563], [143.381124, -37.429568], [143.381898, -37.429651], [143.38215, -37.429678], [143.38279, -37.429746], [143.383499, -37.429828], [143.383661, -37.429847], [143.383742, -37.429325], [143.383834, -37.42883], [143.38385, -37.428754], [143.383924, -37.428339], [143.383939, -37.428257], [143.383948, -37.428202], [143.383952, -37.428182], [143.384026, -37.427764], [143.384073, -37.427417], [143.384146, -37.426935], [143.383852, -37.426874], [143.383579, -37.426867], [143.382842, -37.427031], [143.38289, -37.427217], [143.382878, -37.427287], [143.382701, -37.42734], [143.382305, -37.427362], [143.382232, -37.427374]], "type": "LineString"}, "id": "0", "properties": {"summary": {"distance": 1157.2, "duration": 173.9}, "way_points": [0, 33]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org | OpenStreetMap contributors", "engine": {"build_date": "2022-02-18T19:37:41Z", "graph_date": "2022-09-18T14:35:47Z", "version": "6.7.0"}, "query": {"coordinates": [[143.3790728, -37.431682], [143.382237, -37.427392]], "format": "geojson", "geometry": true, "profile": "driving-car"}, "service": "routing", "timestamp": 1665057417958}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_c47401f67a79cdf80267c708b8398746_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#b22222", "opacity": 1, "weight": 3};
+            }
+        }
+
+        function geo_json_c47401f67a79cdf80267c708b8398746_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_c47401f67a79cdf80267c708b8398746 = L.geoJson(null, {
+                onEachFeature: geo_json_c47401f67a79cdf80267c708b8398746_onEachFeature,
+            
+                style: geo_json_c47401f67a79cdf80267c708b8398746_styler,
+        });
+
+        function geo_json_c47401f67a79cdf80267c708b8398746_add (data) {
+            geo_json_c47401f67a79cdf80267c708b8398746
+                .addData(data)
+                .addTo(map_7ead6c5eb704192b39e8ff9578afea9c);
+        }
+            geo_json_c47401f67a79cdf80267c708b8398746_add({"bbox": [143.37911, -37.431635, 143.38379, -37.429067], "features": [{"bbox": [143.37911, -37.431635, 143.38379, -37.429067], "geometry": {"coordinates": [[143.37911, -37.431461], [143.380751, -37.431635], [143.38088, -37.431005], [143.380921, -37.430813], [143.380981, -37.430439], [143.381, -37.430331], [143.381119, -37.429694], [143.381125, -37.429643], [143.381006, -37.429631], [143.38101, -37.429563], [143.381124, -37.429568], [143.381898, -37.429651], [143.38215, -37.429678], [143.38279, -37.429746], [143.383499, -37.429828], [143.383661, -37.429847], [143.383742, -37.429325], [143.38379, -37.429067]], "type": "LineString"}, "id": "0", "properties": {"summary": {"distance": 712.1, "duration": 100.5}, "way_points": [0, 17]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org | OpenStreetMap contributors", "engine": {"build_date": "2022-02-18T19:37:41Z", "graph_date": "2022-09-18T14:35:47Z", "version": "6.7.0"}, "query": {"coordinates": [[143.3790728, -37.431682], [143.384045, -37.429097]], "format": "geojson", "geometry": true, "profile": "driving-car"}, "service": "routing", "timestamp": 1665057416661}, "type": "FeatureCollection"});
+
+        
+    
+        function geo_json_e5b12b70c27cc5ddc0d5fcffc85bddbf_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#40826d", "opacity": 1, "weight": 3};
+            }
+        }
+
+        function geo_json_e5b12b70c27cc5ddc0d5fcffc85bddbf_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_e5b12b70c27cc5ddc0d5fcffc85bddbf = L.geoJson(null, {
+                onEachFeature: geo_json_e5b12b70c27cc5ddc0d5fcffc85bddbf_onEachFeature,
+            
+                style: geo_json_e5b12b70c27cc5ddc0d5fcffc85bddbf_styler,
+        });
+
+        function geo_json_e5b12b70c27cc5ddc0d5fcffc85bddbf_add (data) {
+            geo_json_e5b12b70c27cc5ddc0d5fcffc85bddbf
+                .addData(data)
+                .addTo(map_7ead6c5eb704192b39e8ff9578afea9c);
+        }
+            geo_json_e5b12b70c27cc5ddc0d5fcffc85bddbf_add({"bbox": [143.37911, -37.431635, 143.38123, -37.429159], "features": [{"bbox": [143.37911, -37.431635, 143.38123, -37.429159], "geometry": {"coordinates": [[143.37911, -37.431461], [143.380751, -37.431635], [143.38088, -37.431005], [143.380921, -37.430813], [143.380981, -37.430439], [143.381, -37.430331], [143.381119, -37.429694], [143.381125, -37.429643], [143.381006, -37.429631], [143.38101, -37.429563], [143.381017, -37.429488], [143.381001, -37.429371], [143.380996, -37.42936], [143.381026, -37.429379], [143.381066, -37.429346], [143.38117, -37.42926], [143.38121, -37.429205], [143.38123, -37.429159], [143.38121, -37.429271], [143.381186, -37.429326]], "type": "LineString"}, "id": "0", "properties": {"summary": {"distance": 464.6, "duration": 90.9}, "way_points": [0, 19]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org | OpenStreetMap contributors", "engine": {"build_date": "2022-02-18T19:37:41Z", "graph_date": "2022-09-18T14:35:47Z", "version": "6.7.0"}, "query": {"coordinates": [[143.3790728, -37.431682], [143.381324, -37.429419]], "format": "geojson", "geometry": true, "profile": "driving-car"}, "service": "routing", "timestamp": 1665057415377}, "type": "FeatureCollection"});
+
+        
+</script>
